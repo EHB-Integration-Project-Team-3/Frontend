@@ -1,0 +1,3 @@
+Admin paneel ( userbeheer, courses overview , courses bewerken pagina) => Steffen
+( Event overview, event detail, event aanmaken ) => Michaël
+( inloggen, registeren, profielpagina ) => Yoni
