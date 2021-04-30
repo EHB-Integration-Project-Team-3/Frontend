@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pkop5N25j75yKuuHeRkb9mZsPMPc8gkeH9g0P+R+c3n6ZUQss+py6CX3LFRt2ieu99OwLHyY5ILlooBlHw1Crg==",
+  "dgSpecHash": "UqKVzitG1aG3fUOwAzdTOJ81PSEIfZrMfPC/cu2G7heNe0K2zLSLzqBB3PYYshVTSXMLi5sKhDyB3wwLsfok6A==",
   "success": true,
-  "projectFilePath": "C:\\GitHub\\integration_project_frontend\\Project\\Integration Project\\Integration Project.csproj",
+  "projectFilePath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.13\\microsoft.aspnetcore.cryptography.internal.3.1.13.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.13\\microsoft.aspnetcore.cryptography.keyderivation.3.1.13.nupkg.sha512",

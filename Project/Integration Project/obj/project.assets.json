@@ -8897,11 +8897,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\integration_project_frontend\\Project\\Integration Project\\Integration Project.csproj",
+      "projectUniqueName": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj",
       "projectName": "Integration Project",
-      "projectPath": "C:\\GitHub\\integration_project_frontend\\Project\\Integration Project\\Integration Project.csproj",
+      "projectPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj",
       "packagesPath": "C:\\Users\\michael.bracke\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\integration_project_frontend\\Project\\Integration Project\\obj\\",
+      "outputPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
