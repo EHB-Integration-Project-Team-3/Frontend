@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 namespace Integration_Project.Models
 {
     [XmlRoot(ElementName = "user")]
-    public class User
+    public class InternalUser
     {
         [Key]
         [XmlAttribute("uuid")]

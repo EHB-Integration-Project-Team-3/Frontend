@@ -84,6 +84,63 @@ namespace Integration_Project.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Integration_Project.Models.Event", b =>
+                {
+                    b.Property<Guid>("Uuid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("End")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EntityVersion")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("LocationUuid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OrganiserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Start")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Uuid");
+
+                    b.HasIndex("LocationUuid");
+
+                    b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("Integration_Project.Models.Location", b =>
+                {
+                    b.Property<Guid>("Uuid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StreetName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Uuid");
+
+                    b.ToTable("Location");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -162,12 +219,10 @@ namespace Integration_Project.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -204,12 +259,10 @@ namespace Integration_Project.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -217,6 +270,13 @@ namespace Integration_Project.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Integration_Project.Models.Event", b =>
+                {
+                    b.HasOne("Integration_Project.Models.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationUuid");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

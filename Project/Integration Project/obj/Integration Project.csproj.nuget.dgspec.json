@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {}
+    "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {
+    "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj",
+        "projectUniqueName": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj",
         "projectName": "Integration Project",
-        "projectPath": "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj",
-        "packagesPath": "C:\\Users\\gebruiker\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\Frontend\\Project\\Integration Project\\obj\\",
+        "projectPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj",
+        "packagesPath": "C:\\Users\\michael.bracke\\.nuget\\packages\\",
+        "outputPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\michael.bracke\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,6 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://ciserver:8080/httpAuth/app/nuget/feed/BecosoftCore/default/v2": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -72,6 +73,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.2.1, )"
             }
           },
           "imports": [
@@ -92,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
