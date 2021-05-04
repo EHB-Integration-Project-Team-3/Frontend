@@ -14,5 +14,11 @@ namespace Integration_Project.Models
 
         [XmlAttribute("source")]
         public Source Source { get; set; }
+
+        public Heartbeat()
+        {
+            TimeStamp = DateTime.Now;
+            Source = Source.frontend;
+        }
     }
 }
