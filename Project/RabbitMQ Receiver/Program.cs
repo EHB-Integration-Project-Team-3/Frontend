@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using RabbitMQ.Client.Events;
 using System.Text;
 using Integration_Project.Models;
-using System.Diagnostics;
+using Integration_Project.Services.EventService;
 
 namespace RabbitMQ_Receiver
 {
@@ -35,8 +35,12 @@ namespace RabbitMQ_Receiver
 
         private static async Task Consumer_Received(object sender, BasicDeliverEventArgs @event)
         {
+            var eventService = new EventService();
+
             var message = Encoding.UTF8.GetString(@event.Body.ToArray());
             Event receivedEvent = XmlController.DeserializeXmlString<Event>(message);
+
+            eventService.Add(receivedEvent);
 
             Console.WriteLine($"Received Event: {message}");
 

@@ -926,7 +926,6 @@ D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\A
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Evenement\Overview.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -1341,3 +1340,7 @@ D:\GitHub\Frontend\Project\Integration Project\bin\Release\netcoreapp3.1\runtime
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.Views.pdb
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.csproj.CopyComplete
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.genruntimeconfig.cache
+D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Create.cshtml.g.cs
+D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Edit.cshtml.g.cs
+D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Overview.cshtml.g.cs
+D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache

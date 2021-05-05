@@ -10,11 +10,9 @@ namespace Integration_Project.RabbitMQ
 {
     public class Rabbit
     {
-        public static void Send<T>(T data, string x, string q)
+        public static void Send<T>(T data, string x, string q = "")
         {
             string xmlString = XmlController.SerializeToXmlString(data);
-
-            //save to database and continue if succesfuly saved
 
             if (xmlString != null)
             {

@@ -5,44 +5,55 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RabbitMQ;
+using Integration_Project.RabbitMQ;
 
-namespace Integration_Project.Controllers {
-    public class EventController : Controller {
-
+namespace Integration_Project.Controllers
+{
+    public class EventController : Controller
+    {
         private readonly IEventService _eventService;
-        public EventController(IEventService eventService) {
+
+        public EventController(IEventService eventService)
+        {
             _eventService = eventService;
         }
 
-        public IActionResult Index() {
+        public IActionResult Index()
+        {
             return View();
         }
 
-        public IActionResult Overview() {
+        public IActionResult Overview()
+        {
             var Events = _eventService.GetAll();
             return View(Events);
         }
 
         //[UserPermission]
-        public IActionResult Edit() {
+        public IActionResult Edit()
+        {
             return View();
         }
 
         //[UserPermission]
-        public IActionResult Create() {
+        public IActionResult Create()
+        {
             return View();
         }
 
         [HttpPost]
         //[UserPermission]
-        public IActionResult CreateEvent(Event Ev) {
+        public IActionResult CreateEvent(Event Ev)
+        {
             // handle ev save
             if (_eventService.Add(Ev))
+            {
+                Rabbit.Send<Event>(Ev, Constants.EventX);
                 return RedirectToAction("Overview", "Event");
+            }
             else
                 return null;
         }
-
-
     }
 }
