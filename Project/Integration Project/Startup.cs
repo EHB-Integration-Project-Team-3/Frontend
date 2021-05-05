@@ -1,7 +1,9 @@
 using Integration_Project;
 using Integration_Project.Areas.Identity.Data;
-using Integration_Project.Data;
+using Integration_Project.Models;
 using Integration_Project.Services;
+using Integration_Project.Services.EventService;
+using Integration_Project.Services.EventService.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +29,7 @@ namespace Integration_Project {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
+            services.AddScoped<IEventService, EventService>();
             services.AddDbContext<Integration_ProjectContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));

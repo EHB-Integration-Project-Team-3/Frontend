@@ -386,50 +386,6 @@ C:\GitHub\integration_project_frontend\Project\Integration Project\obj\Debug\net
 C:\GitHub\integration_project_frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.dll
 C:\GitHub\integration_project_frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.pdb
 C:\GitHub\integration_project_frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.genruntimeconfig.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfoInputs.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfo.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csproj.CoreCompileInputs.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.MvcApplicationPartsAssemblyInfo.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.MvcApplicationPartsAssemblyInfo.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorAssemblyInfo.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorAssemblyInfo.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\staticwebassets\Integration Project.StaticWebAssets.Manifest.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\staticwebassets\Integration Project.StaticWebAssets.xml
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\scopedcss\bundle\Integration Project.styles.css
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.TagHelpers.input.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.TagHelpers.output.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorCoreGenerate.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Email.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorTargetAssemblyInfo.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorTargetAssemblyInfo.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.dll
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.pdb
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\appsettings.json
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
@@ -831,6 +787,53 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfoInputs.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfo.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csproj.CoreCompileInputs.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.MvcApplicationPartsAssemblyInfo.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.MvcApplicationPartsAssemblyInfo.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorAssemblyInfo.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorAssemblyInfo.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\staticwebassets\Integration Project.StaticWebAssets.Manifest.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\staticwebassets\Integration Project.StaticWebAssets.xml
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\scopedcss\bundle\Integration Project.styles.css
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.TagHelpers.input.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.TagHelpers.output.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorCoreGenerate.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Email.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Edit.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Overview.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorTargetAssemblyInfo.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorTargetAssemblyInfo.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.Views.pdb
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csproj.CopyComplete
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.pdb
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.genruntimeconfig.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Create.cshtml.g.cs

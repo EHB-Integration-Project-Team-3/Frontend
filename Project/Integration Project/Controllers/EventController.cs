@@ -19,16 +19,28 @@ namespace Integration_Project.Controllers {
         }
 
         public IActionResult Overview() {
-            // overview van events in DB
-            return View();
+            var Events = _eventService.GetAll();
+            return View(Events);
         }
 
+        //[UserPermission]
         public IActionResult Edit() {
             return View();
         }
 
+        //[UserPermission]
         public IActionResult Create() {
             return View();
+        }
+
+        [HttpPost]
+        //[UserPermission]
+        public IActionResult CreateEvent(Event Ev) {
+            // handle ev save
+            if (_eventService.Add(Ev))
+                return RedirectToAction("Overview", "Event");
+            else
+                return null;
         }
 
 

@@ -7,14 +7,30 @@ using Integration_Project.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
-namespace Integration_Project.Data {
-    public class Integration_ProjectContext : IdentityDbContext<User> {
+namespace Integration_Project.Areas.Identity.Data {
+    public class Integration_ProjectContext : DbContext {
+
+        private const string _connectionString = @"Data Source=10.3.17.65\SQLEXPRESS,1433;Initial Catalog=IntegrationFrontendDB;Persist Security Info=True;User ID=Administrator;Password=poi987POI";
+        public Integration_ProjectContext() {
+
+        }
+
         public Integration_ProjectContext(DbContextOptions<Integration_ProjectContext> options)
             : base(options) {
 
         }
         public virtual DbSet<Event> Events { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+            if (!optionsBuilder.IsConfigured) {
+                optionsBuilder.UseSqlServer(
+                    _connectionString
+                    );
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder builder) {
 
             base.OnModelCreating(builder);
