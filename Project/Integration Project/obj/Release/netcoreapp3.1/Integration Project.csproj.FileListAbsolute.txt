@@ -689,7 +689,6 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreap
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\refs\System.Text.Encodings.Web.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\refs\System.Text.RegularExpressions.dll
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\refs\System.Threading.Channels.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\refs\System.Threading.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\refs\System.Threading.Overlapped.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\refs\System.Threading.Tasks.Dataflow.dll
@@ -892,7 +891,6 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreap
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.pdb
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.genruntimeconfig.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Evenement\Overview.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.AssemblyInfoInputs.cache
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.AssemblyInfo.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.csproj.CoreCompileInputs.cache
@@ -1344,3 +1342,8 @@ D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\V
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Edit.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Overview.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\RabbitMQ.Client.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\System.Threading.Channels.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Create.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Edit.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Overview.cshtml.g.cs
