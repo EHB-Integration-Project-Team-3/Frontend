@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Event>
+    <div class="row card-title d-flex justify-content-center">
+        <h2 class="p-3 rounded bg-light">Events</h2>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <table class="table table-bordered table-hover col-9">
+            <tr>
+                <th>Event </th>
+                <th>Beschrijving</th>
+                <th>Locatie </th>
+                <th>Start datum</th>
+            </tr>
+            @foreach (var ev in Model) {
+                <tr>
+                    <td>@ev.Title</td>
+                    <td>@ev.Description</td>
+                    <td>@ev.Location.City</td>
+                    <td>@ev.Start</td>
+                </tr>
+            }
+        </table>
+    </div>

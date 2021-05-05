@@ -1,0 +1,54 @@
+﻿@model Event
+
+@{
+    ViewData["Title"] = "Create Event";
+}
+<div class="row card-title d-flex justify-content-center">
+    <h2 class="p-3 rounded bg-light">Maak een nieuw event aan</h2>
+</div>
+<div class="row d-flex justify-content-center">
+    <!-- list item image picker -->
+    @using (Html.BeginForm("CreateEvent", "Event", null, FormMethod.Post, null, new { @class="col-8 mt-4" })) {
+        @Html.AntiForgeryToken();
+        <div class="form-group">
+            @Html.LabelFor(m => Model.Title)
+            @Html.TextBoxFor(m => Model.Title, "", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => Model.Description)
+            @Html.TextAreaFor(m => Model.Description, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => Model.Location.City)
+            @Html.TextBoxFor(m => Model.Location.City, "", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => Model.Location.PostalCode)
+            @Html.TextBoxFor(m => Model.Location.PostalCode, "", new { @type = "number", @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => Model.Location.StreetName)
+            @Html.TextBoxFor(m => Model.Location.StreetName, "", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => Model.Location.Number)
+            @Html.TextBoxFor(m => Model.Location.Number, "", new { @type="number", @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.Start, new { htmlAttributes = new { @Value = DateTime.Now, @class = "form-control datepicker" } })
+            @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
+            <!-- Date Picker Input -->
+            <!--<div class="form-group mb-4">
+                <div class="datepicker date input-group p-0 shadow-sm">
+                    Html.TextBoxFor(m => Model.Start, "", new { class = "form-control py-4 px-4", id = "EventStart",placeholder = "Choose an event date" })
+                    <div class="input-group-append"><span class="input-group-text px-4"><i class="fa fa-clock-o"></i></span></div>
+                </div>
+            </div>-->
+            <!-- DEnd ate Picker Input -->
+        </div>
+
+        <button class="btn btn-outline-secondary">Toevoegen</button>
+
+    }
+
+</div>

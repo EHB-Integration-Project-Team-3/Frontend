@@ -1,6 +1,5 @@
 ﻿using System;
 using Integration_Project.Areas.Identity.Data;
-using Integration_Project.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
