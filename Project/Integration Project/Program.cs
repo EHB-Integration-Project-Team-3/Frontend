@@ -1,21 +1,33 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using Integration_Project.Models;
+using Integration_Project.RabbitMQ;
+using System.Threading;
 using System.Threading.Tasks;
+using RabbitMQ.Client.Events;
+using System.Text;
+using System.Diagnostics;
+using RabbitMQ.Client;
 
-namespace Integration_Project {
-    public class Program {
-        public static void Main(string[] args) {
+namespace Integration_Project
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            new Timer((e) => { Rabbit.Send<Heartbeat>(new Heartbeat(), RabbitMQ.Constants.WarningX, RabbitMQ.Constants.MonitoringHeartbeatQ); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
+
+            var receiver = Process.Start(@"D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\RabbitMQ Receiver"); //!!!!
+
             CreateHostBuilder(args).Build().Run();
+            receiver.Kill();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => {
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
                     webBuilder.UseStartup<Startup>();
                 });
     }
