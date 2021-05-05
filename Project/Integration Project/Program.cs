@@ -18,10 +18,10 @@ namespace Integration_Project
         {
             new Timer((e) => { Rabbit.Send<Heartbeat>(new Heartbeat(), RabbitMQ.Constants.WarningX, RabbitMQ.Constants.MonitoringHeartbeatQ); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
 
-            var receiver = Process.Start(@"..\RabbitMQ Receiver\bin\Release\netcoreapp3.1\RabbitMQ Receiver");
+            //var receiver = Process.Start(@"..\RabbitMQ Receiver\bin\Release\netcoreapp3.1\RabbitMQ Receiver");
 
             CreateHostBuilder(args).Build().Run();
-            receiver.Kill();
+            //receiver.Kill();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
