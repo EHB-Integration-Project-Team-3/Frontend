@@ -6,18 +6,15 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-
-namespace Integration_Project {
-    public class UserPermission : AuthorizeAttribute, IAuthorizationFilter {
-
+namespace Integration_Project
+{
+    public class UserPermission : AuthorizeAttribute, IAuthorizationFilter
+    {
         public string Permissions { get; set; } //Permission string to get from controller
 
-        public void OnAuthorization(AuthorizationFilterContext context) {
+        public void OnAuthorization(AuthorizationFilterContext context)
+        {
             //Validate if any permissions are passed when using attribute at controller or action level
             //if (string.IsNullOrEmpty(Permissions)) {
             //    //Validation cannot take place without any permissions so returning unauthorized
@@ -30,8 +27,6 @@ namespace Integration_Project {
             //Identity.Name will have windows logged in user id, in case of Windows Authentication
             //Indentity.Name will have user name passed from token, in case of JWT Authenntication and having claim type "ClaimTypes.Name"
 
-
-
             // Hier gaan we dus onze custom checker schrijven voor de controle of de user is aangemeld ofniet
             // Hoe gebruiken?
             /// door in klasses, controllers etc.. bovenaan de method of gehele klasse de naam van deze klasse te schrijven
@@ -39,7 +34,7 @@ namespace Integration_Project {
             // hoe werkt het?
             /// return => geldige validatie
             /// redirectResult => ongeldige valdatie
-            /// 
+            ///
 
             //var userName = AuthService.CheckLoggedUser();
             //if (userName.IsAdmin)
@@ -48,10 +43,5 @@ namespace Integration_Project {
             //context.Result = new RedirectResult(string.Format("/Admin/Home/Index"));
             //return;
         }
-
     }
-
-
 }
-
-  
