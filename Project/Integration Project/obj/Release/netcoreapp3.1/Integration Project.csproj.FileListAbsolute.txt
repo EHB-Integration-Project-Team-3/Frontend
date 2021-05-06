@@ -1346,3 +1346,4 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreap
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Create.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Edit.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Overview.cshtml.g.cs
+D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache

@@ -10,7 +10,7 @@ namespace Integration_Project.Models
     [XmlRoot(ElementName = "event")]
     public class Event
     {
-        [XmlAttribute("header")]
+        [XmlElement("header")]
         public Header Header { get; set; }
 
         [Key]

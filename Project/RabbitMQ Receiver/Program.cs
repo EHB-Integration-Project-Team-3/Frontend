@@ -40,6 +40,7 @@ namespace RabbitMQ_Receiver
             var message = Encoding.UTF8.GetString(@event.Body.ToArray());
             Event receivedEvent = XmlController.DeserializeXmlString<Event>(message);
 
+            receivedEvent.Location = Location.FromRabbitMQ(receivedEvent.LocationRabbit);
             eventService.Add(receivedEvent);
 
             Console.WriteLine($"Received Event: {message}");

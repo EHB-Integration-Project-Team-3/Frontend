@@ -419,7 +419,6 @@ D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.runtimeconfig.dev.json
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\appsettings.json
-D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.exe
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.exe
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.deps.json
@@ -826,3 +825,4 @@ D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Re
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.dll
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.pdb
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.genruntimeconfig.cache
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml

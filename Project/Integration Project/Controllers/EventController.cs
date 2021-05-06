@@ -1,7 +1,7 @@
 ﻿using Integration_Project.Models;
 using Integration_Project.Services.EventService.Interface;
 using Microsoft.AspNetCore.Mvc;
-using System; 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -47,17 +47,18 @@ namespace Integration_Project.Controllers
         public IActionResult CreateEvent(Event Ev)
         {
             // handle ev save
-            if (_eventService.Add(Ev))
-            {
-                Ev.Header.Method = Method.CREATE;
-                Ev.Header.Source = Source.FRONTEND;
-                Ev.Uuid = Guid.NewGuid();
-                Ev.LocationRabbit = Ev.Location.ToString();
-                Rabbit.Send<Event>(Ev, Constants.EventX);
-                return RedirectToAction("Overview", "Event");
-            }
-            else
-                return null;
+            //if (_eventService.Add(Ev))
+            //{
+            Ev.Header = new Header();
+            Ev.Header.Method = Method.CREATE;
+            Ev.Header.Source = Source.FRONTEND;
+            Ev.Uuid = Guid.NewGuid();
+            Ev.LocationRabbit = Ev.Location.ToString();
+            Rabbit.Send<Event>(Ev, Constants.EventX);
+            return RedirectToAction("Overview", "Event");
+            //}
+            //else
+            //    return null;
         }
     }
 }
