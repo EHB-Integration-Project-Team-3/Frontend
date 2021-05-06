@@ -30,5 +30,16 @@ namespace Integration_Project.Models
         {
             return $"{StreetName} {Number} {PostalCode} {City}";
         }
+
+        public static Location  FromRabbitMQ(string locationString)
+        {
+            var locationArray = locationString.Split(" ");
+            return new Location {
+                StreetName = locationArray[0],
+                Number = locationArray[1],
+                PostalCode = locationArray[2],
+                City = locationArray[3]
+            };
+        }
     }
 }

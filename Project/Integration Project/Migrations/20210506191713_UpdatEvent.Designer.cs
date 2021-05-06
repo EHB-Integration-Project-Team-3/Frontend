@@ -4,14 +4,16 @@ using Integration_Project.Areas.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Integration_Project.Migrations
 {
     [DbContext(typeof(Integration_ProjectContext))]
-    partial class Integration_ProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20210506191713_UpdatEvent")]
+    partial class UpdatEvent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
