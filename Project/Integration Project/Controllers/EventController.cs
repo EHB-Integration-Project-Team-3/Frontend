@@ -49,6 +49,10 @@ namespace Integration_Project.Controllers
             // handle ev save
             if (_eventService.Add(Ev))
             {
+                Ev.Header.Method = Method.CREATE;
+                Ev.Header.Source = Source.FRONTEND;
+                Ev.Uuid = Guid.NewGuid();
+                Ev.LocationRabbit = Ev.Location.ToString();
                 Rabbit.Send<Event>(Ev, Constants.EventX);
                 return RedirectToAction("Overview", "Event");
             }

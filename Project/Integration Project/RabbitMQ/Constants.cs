@@ -7,7 +7,7 @@ namespace Integration_Project.RabbitMQ
 {
     public class Constants
     {
-        public const string Connection = "localhost";
+        public const string Connection = "amqp://guest:guest@10.3.17.61:5672";
 
         public const string EventX = "event-exchange";
         public const string UserX = "user-exchange";

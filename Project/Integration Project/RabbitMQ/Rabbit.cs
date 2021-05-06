@@ -16,14 +16,14 @@ namespace Integration_Project.RabbitMQ
 
             if (xmlString != null)
             {
-                var factory = new ConnectionFactory() { HostName = Constants.Connection };
+                var factory = new ConnectionFactory() { Uri = new Uri(Constants.Connection) };
                 using var connection = factory.CreateConnection();
                 using var channel = connection.CreateModel();
 
                 channel.QueueDeclare(
                     queue: q,
                     exclusive: false,
-                    durable: false,
+                    durable: true,
                     autoDelete: false,
                     arguments: null);
 
@@ -31,7 +31,7 @@ namespace Integration_Project.RabbitMQ
 
                 channel.BasicPublish(
                     exchange: x,
-                    routingKey: q,
+                    routingKey: "",
                     basicProperties: null,
                     body: body);
             }

@@ -1341,7 +1341,6 @@ D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integra
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Create.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Edit.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Overview.cshtml.g.cs
-D:\GitHub\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\RabbitMQ.Client.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\System.Threading.Channels.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Create.cshtml.g.cs

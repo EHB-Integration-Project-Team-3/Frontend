@@ -10,6 +10,9 @@ namespace Integration_Project.Models
     [XmlRoot(ElementName = "event")]
     public class Event
     {
+        [XmlAttribute("header")]
+        public Header Header { get; set; }
+
         [Key]
         [XmlAttribute("uuid")]
         public Guid Uuid { get; set; }
@@ -32,7 +35,10 @@ namespace Integration_Project.Models
         [XmlAttribute("end")]
         public DateTime End { get; set; }
 
-        [XmlElement("location")]
+        //[XmlElement("location")]
         public Location Location { get; set; }
+
+        [XmlAttribute("location")]
+        public string LocationRabbit { get; set; }
     }
 }

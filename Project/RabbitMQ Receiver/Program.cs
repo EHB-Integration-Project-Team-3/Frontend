@@ -13,11 +13,11 @@ namespace RabbitMQ_Receiver
     {
         public static void Main(string[] args)
         {
-            var factory = new ConnectionFactory() { HostName = Integration_Project.RabbitMQ.Constants.Connection, DispatchConsumersAsync = true };
+            var factory = new ConnectionFactory() { Uri = new Uri(Integration_Project.RabbitMQ.Constants.Connection), DispatchConsumersAsync = true };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
             channel.QueueDeclare(queue: Integration_Project.RabbitMQ.Constants.FrontendEventQ,
-                                 durable: false,
+                                 durable: true,
                                  exclusive: false,
                                  autoDelete: false,
                                  arguments: null);

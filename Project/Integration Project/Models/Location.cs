@@ -25,5 +25,10 @@ namespace Integration_Project.Models
 
         [XmlAttribute("postalCode")]
         public string PostalCode { get; set; }
+
+        public override string ToString()
+        {
+            return $"{StreetName} {Number} {PostalCode} {City}";
+        }
     }
 }

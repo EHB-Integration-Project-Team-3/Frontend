@@ -1,6 +1,6 @@
 ﻿public enum Source
 {
-    frontend,
-    canvas,
-    planning
+    FRONTEND,
+    CANVAS,
+    PLANNING
 }
