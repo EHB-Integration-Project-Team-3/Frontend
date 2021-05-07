@@ -16,12 +16,9 @@ namespace Integration_Project
     {
         public static void Main(string[] args)
         {
-            new Timer((e) => { Rabbit.Send<Heartbeat>(new Heartbeat(), RabbitMQ.Constants.WarningX, RabbitMQ.Constants.MonitoringHeartbeatQ); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
-
-            //var receiver = Process.Start(@"..\RabbitMQ Receiver\bin\Release\netcoreapp3.1\RabbitMQ Receiver");
+            //new Timer((e) => { Rabbit.Send<Heartbeat>(new Heartbeat(), RabbitMQ.Constants.WarningX, RabbitMQ.Constants.MonitoringHeartbeatQ); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
 
             CreateHostBuilder(args).Build().Run();
-            //receiver.Kill();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

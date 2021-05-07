@@ -18,7 +18,7 @@ namespace Integration_Project.Models
         public Heartbeat()
         {
             TimeStamp = DateTime.Now;
-            Source = Source.frontend;
+            Source = Source.FRONTEND;
         }
     }
 }

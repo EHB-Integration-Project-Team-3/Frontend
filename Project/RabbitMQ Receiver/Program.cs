@@ -13,14 +13,9 @@ namespace RabbitMQ_Receiver
     {
         public static void Main(string[] args)
         {
-            var factory = new ConnectionFactory() { HostName = Integration_Project.RabbitMQ.Constants.Connection, DispatchConsumersAsync = true };
+            var factory = new ConnectionFactory() { Uri = new Uri(Integration_Project.RabbitMQ.Constants.Connection), DispatchConsumersAsync = true };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
-            channel.QueueDeclare(queue: Integration_Project.RabbitMQ.Constants.FrontendEventQ,
-                                 durable: false,
-                                 exclusive: false,
-                                 autoDelete: false,
-                                 arguments: null);
 
             var consumer = new AsyncEventingBasicConsumer(channel);
             consumer.Received += Consumer_Received;
@@ -35,18 +30,25 @@ namespace RabbitMQ_Receiver
 
         private static async Task Consumer_Received(object sender, BasicDeliverEventArgs @event)
         {
-            var eventService = new EventService();
+            try
+            {
+                var eventService = new EventService();
 
-            var message = Encoding.UTF8.GetString(@event.Body.ToArray());
-            Event receivedEvent = XmlController.DeserializeXmlString<Event>(message);
+                var message = Encoding.UTF8.GetString(@event.Body.ToArray());
+                Console.WriteLine($"\nReceived Message:\n{message}");
+                Event receivedEvent = XmlController.DeserializeXmlString<Event>(message);
 
-            eventService.Add(receivedEvent);
+                receivedEvent.Location = Location.FromRabbitMQ(receivedEvent.LocationRabbit);
+                eventService.Add(receivedEvent);
 
-            Console.WriteLine($"Received Event: {message}");
+                Console.WriteLine($"\nSuccesfully deserialized");
 
-            await Task.Delay(250);
-
-            Console.WriteLine("Waiting for message...");
+                await Task.Delay(250);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }

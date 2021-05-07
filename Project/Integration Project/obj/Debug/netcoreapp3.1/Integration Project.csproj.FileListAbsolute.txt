@@ -386,6 +386,7 @@ C:\GitHub\integration_project_frontend\Project\Integration Project\obj\Debug\net
 C:\GitHub\integration_project_frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.dll
 C:\GitHub\integration_project_frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.pdb
 C:\GitHub\integration_project_frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.genruntimeconfig.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\appsettings.json
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
@@ -427,7 +428,6 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.dll
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Features.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpOverrides.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpsPolicy.dll
@@ -787,7 +787,6 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfoInputs.cache
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfo.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csproj.CoreCompileInputs.cache
@@ -819,6 +818,7 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Create.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Edit.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Overview.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
@@ -836,16 +836,6 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.pdb
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.genruntimeconfig.cache
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Create.cshtml.g.cs
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfoInputs.cache
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfo.cs
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csproj.CoreCompileInputs.cache
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.MvcApplicationPartsAssemblyInfo.cs
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.MvcApplicationPartsAssemblyInfo.cache
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorAssemblyInfo.cache
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorAssemblyInfo.cs
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.dll
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.pdb
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\appsettings.json
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
@@ -1247,6 +1237,13 @@ D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfoInputs.cache
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.AssemblyInfo.cs
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csproj.CoreCompileInputs.cache
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.MvcApplicationPartsAssemblyInfo.cs
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.MvcApplicationPartsAssemblyInfo.cache
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorAssemblyInfo.cache
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorAssemblyInfo.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\staticwebassets\Integration Project.StaticWebAssets.Manifest.cache
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\staticwebassets\Integration Project.StaticWebAssets.xml
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\scopedcss\bundle\Integration Project.styles.css
@@ -1286,5 +1283,6 @@ D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integrati
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.RazorTargetAssemblyInfo.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.Views.pdb
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csproj.CopyComplete
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.dll
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.pdb
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.genruntimeconfig.cache
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
