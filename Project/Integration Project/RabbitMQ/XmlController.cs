@@ -31,6 +31,10 @@ namespace Integration_Project.RabbitMQ
         {
             try
             {
+                string _byteOrderMarkUtf8 = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
+                if (xml.StartsWith(_byteOrderMarkUtf8))
+                    xml = xml.Remove(0, _byteOrderMarkUtf8.Length);
+
                 XmlSerializer serializer = new XmlSerializer(typeof(T));
                 StringReader reader = new StringReader(xml);
                 return (T)serializer.Deserialize(reader);
