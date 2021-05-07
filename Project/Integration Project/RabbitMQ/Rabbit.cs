@@ -14,18 +14,15 @@ namespace Integration_Project.RabbitMQ
         {
             string xmlString = XmlController.SerializeToXmlString(data);
 
+            string _byteOrderMarkUtf8 = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
+            if (xmlString.StartsWith(_byteOrderMarkUtf8))
+                xmlString = xmlString.Remove(0, _byteOrderMarkUtf8.Length);
+
             if (xmlString != null)
             {
                 var factory = new ConnectionFactory() { Uri = new Uri(Constants.Connection) };
                 using var connection = factory.CreateConnection();
                 using var channel = connection.CreateModel();
-
-                channel.QueueDeclare(
-                    queue: q,
-                    exclusive: false,
-                    durable: true,
-                    autoDelete: false,
-                    arguments: null);
 
                 var body = Encoding.UTF8.GetBytes(xmlString);
 

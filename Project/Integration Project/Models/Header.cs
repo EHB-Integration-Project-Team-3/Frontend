@@ -11,10 +11,10 @@ namespace Integration_Project.Models
     [NotMapped]
     public class Header
     {
-        [XmlAttribute("Method")]
+        [XmlElement("method")]
         public Method Method { get; set; }
 
-        [XmlAttribute("Source")]
+        [XmlElement("source")]
         public Source Source { get; set; }
     }
 }

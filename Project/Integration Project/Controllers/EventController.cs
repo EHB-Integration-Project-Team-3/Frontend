@@ -53,6 +53,7 @@ namespace Integration_Project.Controllers
             Ev.Header.Method = Method.CREATE;
             Ev.Header.Source = Source.FRONTEND;
             Ev.Uuid = Guid.NewGuid();
+            Ev.OrganiserId = new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1");
             Ev.LocationRabbit = Ev.Location.ToString();
             Rabbit.Send<Event>(Ev, Constants.EventX);
             return RedirectToAction("Overview", "Event");
