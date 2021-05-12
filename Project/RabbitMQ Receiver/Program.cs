@@ -23,6 +23,9 @@ namespace RabbitMQ_Receiver
             channel.BasicConsume(queue: Integration_Project.RabbitMQ.Constants.FrontendEventQ,
                                          autoAck: true,
                                          consumer: consumer);
+            channel.BasicConsume(queue: Integration_Project.RabbitMQ.Constants.FrontendUserQ,
+                                         autoAck: true,
+                                         consumer: consumer);
 
             Console.WriteLine("Waiting for message...");
             Console.ReadLine();
@@ -32,22 +35,28 @@ namespace RabbitMQ_Receiver
         {
             try
             {
-                var eventService = new EventService();
-
-                var message = Encoding.UTF8.GetString(@event.Body.ToArray());
-                Console.WriteLine($"\nReceived Message:\n{message}");
-                Event receivedEvent = XmlController.DeserializeXmlString<Event>(message);
-
-                receivedEvent.Location = Location.FromRabbitMQ(receivedEvent.LocationRabbit);
-                eventService.Add(receivedEvent);
-
-                Console.WriteLine($"\nSuccesfully deserialized");
-
-                await Task.Delay(250);
+                if (@event.Exchange == Integration_Project.RabbitMQ.Constants.EventX)
+                {
+                    var message = Encoding.UTF8.GetString(@event.Body.ToArray());
+                    Console.WriteLine($"\nReceived Event:\n{message}");
+                    Event receivedEvent = XmlController.DeserializeXmlString<Event>(message);
+                    Console.WriteLine($"\nEvent succesfully deserialized");
+                    receivedEvent.Location = Location.FromRabbitMQ(receivedEvent.LocationRabbit);
+                    if (new EventService().Add(receivedEvent))
+                        Console.WriteLine($"\nEvent successfully added to database");
+                }
+                else if (@event.Exchange == Integration_Project.RabbitMQ.Constants.UserX)
+                {
+                    //var userService = new UserService();
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+            }
+            finally
+            {
+                await Task.Delay(250);
             }
         }
     }

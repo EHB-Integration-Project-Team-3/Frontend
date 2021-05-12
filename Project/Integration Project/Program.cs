@@ -16,7 +16,7 @@ namespace Integration_Project
     {
         public static void Main(string[] args)
         {
-            //new Timer((e) => { Rabbit.Send<Heartbeat>(new Heartbeat(), RabbitMQ.Constants.WarningX, RabbitMQ.Constants.MonitoringHeartbeatQ); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
+            new Timer((e) => { Rabbit.Send<Heartbeat>(new Heartbeat(), "", RabbitMQ.Constants.MonitoringHeartbeatQ); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
 
             CreateHostBuilder(args).Build().Run();
         }

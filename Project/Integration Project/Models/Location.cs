@@ -11,36 +11,63 @@ namespace Integration_Project.Models
     public class Location
     {
         [Key]
-        [XmlAttribute("uuid")]
+        [XmlElement("uuid")]
         public Guid Uuid { get; set; }
 
-        [XmlAttribute("streetName")]
+        [XmlElement("streetName")]
         public string StreetName { get; set; }
 
-        [XmlAttribute("number")]
+        [XmlElement("number")]
         public string Number { get; set; }
 
-        [XmlAttribute("city")]
+        [XmlElement("bus")]
+        public string Bus { get; set; }
+
+        [XmlElement("city")]
         public string City { get; set; }
 
-        [XmlAttribute("postalCode")]
+        [XmlElement("postalCode")]
         public string PostalCode { get; set; }
 
         public override string ToString()
         {
-            return $"{StreetName} {Number} {PostalCode} {City}";
+            return $"{StreetName}%{Number}%{Bus}%{City}%{PostalCode}";
         }
 
         public static Location FromRabbitMQ(string locationString)
         {
-            var locationArray = locationString.Split(" ");
-            return new Location
+            try
             {
-                StreetName = locationArray[0],
-                Number = locationArray[1],
-                PostalCode = locationArray[2],
-                City = locationArray[3]
-            };
+                var locationArray = locationString.Split("%");
+
+                if (locationArray.Length == 5)
+                {
+                    return new Location
+                    {
+                        StreetName = locationArray[0],
+                        Number = locationArray[1],
+                        Bus = locationArray[2],
+                        City = locationArray[3],
+                        PostalCode = locationArray[4]
+                    };
+                }
+                else
+                {
+                    return new Location
+                    {
+                        StreetName = locationArray[0],
+                        Number = locationArray[1],
+                        Bus = "0",
+                        City = locationArray[2],
+                        PostalCode = locationArray[3]
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return default;
+            }
         }
     }
 }

@@ -825,3 +825,4 @@ D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Re
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.dll
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.pdb
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.genruntimeconfig.cache
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
