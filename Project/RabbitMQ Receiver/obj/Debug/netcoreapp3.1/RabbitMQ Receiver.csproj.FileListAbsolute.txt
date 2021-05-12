@@ -826,3 +826,6 @@ D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Re
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.pdb
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.genruntimeconfig.cache
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll

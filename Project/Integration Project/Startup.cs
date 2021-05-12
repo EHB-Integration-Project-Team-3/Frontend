@@ -6,6 +6,8 @@ using Integration_Project.Services.EventService;
 using Integration_Project.Services.EventService.Interface;
 using Integration_Project.Services.MUUIDService;
 using Integration_Project.Services.MUUIDService.Interface;
+using Integration_Project.Services.UserService;
+using Integration_Project.Services.UserService.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +36,7 @@ namespace Integration_Project {
         public void ConfigureServices(IServiceCollection services) {
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<IMUUIDService, MUUIDService>();
+            services.AddScoped<IUserService, UserService>();
 
             // eigen DBcontext service voor connectie naar eigen database
             services.AddDbContext<Integration_ProjectContext>(options =>

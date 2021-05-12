@@ -8,6 +8,6 @@ namespace Integration_Project.Services.MUUIDService.Interface {
     public interface IMUUIDService {
 
         public Guid InsertIntoMUUID(MUUIDSend sendModel);
-        public object GetUUID();
+        public Guid GetUUID();
     }
 }
