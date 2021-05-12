@@ -9,16 +9,16 @@ namespace Integration_Project.Models
     [XmlRoot(ElementName = "Heartbeat ")]
     public class Heartbeat
     {
-        [XmlAttribute("timeStamp")]
-        public DateTime TimeStamp { get; set; }
+        [XmlElement("header")]
+        public HeaderHeartbeat HeaderHeartbeat { get; set; }
 
-        [XmlAttribute("source")]
-        public Source Source { get; set; }
+        [XmlElement("timeStamp")]
+        public DateTime TimeStamp { get; set; }
 
         public Heartbeat()
         {
             TimeStamp = DateTime.Now;
-            Source = Source.FRONTEND;
+            HeaderHeartbeat = new HeaderHeartbeat() { Status = Status.ONLINE };
         }
     }
 }

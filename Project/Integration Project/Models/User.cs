@@ -10,23 +10,26 @@ namespace Integration_Project.Models
     [XmlRoot(ElementName = "user")]
     public class InternalUser
     {
+        [XmlElement("header")]
+        public Header Header { get; set; }
+
         [Key]
-        [XmlAttribute("uuid")]
+        [XmlElement("uuid")]
         public Guid Uuid { get; set; }
 
-        [XmlAttribute("entityVersion")]
+        [XmlElement("entityVersion")]
         public int EntityVersion { get; set; }
 
-        [XmlAttribute("lastName")]
+        [XmlElement("lastName")]
         public string LastName { get; set; }
 
-        [XmlAttribute("firstName")]
+        [XmlElement("firstName")]
         public string FirstName { get; set; }
 
-        [XmlAttribute("emailAddress")]
+        [XmlElement("emailAddress")]
         public string EmailAddress { get; set; }
 
-        [XmlAttribute("role")]
+        [XmlElement("role")]
         public Role Role { get; set; }
     }
 }

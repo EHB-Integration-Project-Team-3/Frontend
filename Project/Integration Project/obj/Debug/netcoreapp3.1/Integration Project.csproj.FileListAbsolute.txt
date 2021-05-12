@@ -1286,3 +1286,4 @@ D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integrati
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.dll
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.pdb
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.genruntimeconfig.cache
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache

@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace Integration_Project.Models
 {
-    [Serializable]
-    [NotMapped]
-    public class Header
+    [XmlRoot(ElementName = "Heartbeat ")]
+    public class HeaderHeartbeat
     {
-        [XmlElement("method")]
-        public Method Method { get; set; }
+        [XmlElement("status")]
+        public Status Status { get; set; }
 
         [XmlElement("source")]
         public Source Source { get; set; }
 
-        public Header()
+        public HeaderHeartbeat()
         {
             Source = Source.FRONTEND;
         }
