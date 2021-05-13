@@ -25,4 +25,8 @@
     <Folder Include="Services\Interface\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Images\ehb.jpg" />
+  </ItemGroup>
+
 </Project>
