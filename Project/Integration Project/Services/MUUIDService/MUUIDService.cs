@@ -45,7 +45,8 @@ namespace Integration_Project.Services.MUUIDService {
                     return Guid.Parse(uuid);
                 }
             } catch (Exception ex) {
-                Console.WriteLine("Error retrieving uuid muuid");
+                Console.WriteLine("Error retrieving muuid, please check connection or service");
+                return Guid.Empty;
             }
         }
     }

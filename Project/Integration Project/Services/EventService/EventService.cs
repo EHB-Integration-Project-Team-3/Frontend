@@ -21,8 +21,34 @@ namespace Integration_Project.Services.EventService {
                 }
             }
         }
+        public bool Delete(Guid Uuid) {
+            using (var context = new Integration_ProjectContext()) {
+                try {
+                    context.Remove(context.Events.Where(p => p.Uuid == Uuid).FirstOrDefault());
+                    context.SaveChanges();
+                    return true;
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
+                    return false;
+                }
+            }
+        }
+
         public bool Delete(int Id) => throw new NotImplementedException();
-        public bool Update(Event Event) => throw new NotImplementedException();
+        public bool Update(Event Event) {
+            using (var context = new Integration_ProjectContext()) {
+                try {
+                    var foundEvent = context.Events.Where(p => p.Uuid == Event.Uuid).FirstOrDefault();
+                    if (foundEvent != null)
+                        context.Update(Event);
+                    context.SaveChanges();
+                    return true;
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
+                    return false;
+                }
+            }
+        }
         Event IBaseService<Event>.Get(int Id) => throw new NotImplementedException();
         List<Event> IBaseService<Event>.GetAll() {
             using (var context = new Integration_ProjectContext()) {

@@ -6,7 +6,7 @@ using RabbitMQ.Client.Events;
 using System.Text;
 using Integration_Project.Models;
 using Integration_Project.Services.EventService;
-
+using Integration_Project.Services.MUUIDService;
 namespace RabbitMQ_Receiver
 {
     public class Program
