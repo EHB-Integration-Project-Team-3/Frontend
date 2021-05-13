@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj": {}
+    "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {
+    "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj",
+        "projectUniqueName": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj",
         "projectName": "Integration Project",
-        "projectPath": "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj",
-        "packagesPath": "C:\\Users\\gebruiker\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\Frontend\\Project\\Integration Project\\obj\\",
+        "projectPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj",
+        "packagesPath": "C:\\Users\\yonic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yonic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,20 +97,17 @@
         }
       }
     },
-    "D:\\GitHub\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj": {
+    "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
+        "projectUniqueName": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
         "projectName": "RabbitMQ Receiver",
-        "projectPath": "D:\\GitHub\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
-        "packagesPath": "C:\\Users\\gebruiker\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\Frontend\\Project\\RabbitMQ Receiver\\obj\\",
+        "projectPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
+        "packagesPath": "C:\\Users\\yonic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yonic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,8 +121,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {
-                "projectPath": "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj"
+              "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {
+                "projectPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj"
               }
             }
           }
