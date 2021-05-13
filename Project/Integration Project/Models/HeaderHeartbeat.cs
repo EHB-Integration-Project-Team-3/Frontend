@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Integration_Project.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -7,7 +8,6 @@ using System.Xml.Serialization;
 
 namespace Integration_Project.Models
 {
-    [XmlRoot(ElementName = "Heartbeat ")]
     [NotMapped]
     [Serializable]
     public class HeaderHeartbeat
