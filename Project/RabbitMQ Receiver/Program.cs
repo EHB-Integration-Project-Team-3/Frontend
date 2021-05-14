@@ -94,6 +94,7 @@ namespace RabbitMQ_Receiver
             }
             finally
             {
+                Console.WriteLine("\nWaiting for message...");
                 await Task.Delay(250);
             }
         }
