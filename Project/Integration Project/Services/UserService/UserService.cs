@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Integration_Project.Services.UserService
 {
-    public class UserService {
+    public class UserService : IUserService {
         public bool Add(User User)
         {
             using (var context = new Integration_ProjectContext())
@@ -65,7 +65,7 @@ namespace Integration_Project.Services.UserService
                 }
             }
         }
-        public User IBaseService<User>.Get(Guid Id)
+        User IBaseService<User>.Get(Guid Id)
         {
             using (var context = new Integration_ProjectContext())
             {
@@ -74,6 +74,22 @@ namespace Integration_Project.Services.UserService
                     return context.Users
                         .Where(u => u.Uuid == Id)
                         .First<User>();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    return null;
+                }
+            }
+        }
+        List<User> IBaseService<User>.GetAll()
+        {
+            using (var context = new Integration_ProjectContext())
+            {
+                try
+                {
+                    return context.Users
+                        .ToList();
                 }
                 catch (Exception ex)
                 {
