@@ -89,7 +89,7 @@ namespace Integration_Project.Services.EventService {
                 }
             }
         }
-        List<Event> IBaseService<Event>.GetAllForUser(Guid UserId) => throw new NotImplementedException();
+        List<Event> IEventService.GetAllForUser(Guid UserId) => throw new NotImplementedException();
             /*{
             using (var context = new Integration_ProjectContext())
             {
