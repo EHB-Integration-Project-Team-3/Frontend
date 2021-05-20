@@ -48,7 +48,21 @@ namespace Integration_Project.Services.EventService {
             }
         }
         Event IBaseService<Event>.Get(Guid Id) {
-
+            using (var context = new Integration_ProjectContext())
+            {
+                try
+                {
+                    return context.Events
+                        .Include(e => e.Location)
+                        .Where(e => e.Uuid == Id)
+                        .First<Event>();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    return null;
+                }
+            }
         }
         List<Event> IBaseService<Event>.GetAll() {
             using (var context = new Integration_ProjectContext()) {
