@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Integration_Project.Services.EventService.Interface;
+using Integration_Project.Services.UserService.Interface;
 
 namespace Integration_Project.Services.UserService
 {
-    public class UserService : IEventService
+    public class UserService : IUserService
     {
         public bool Add(InternalUser User)
         {
@@ -67,7 +68,7 @@ namespace Integration_Project.Services.UserService
                 }
             }
         }
-        User IBaseService<InternalUser>.Get(Guid Id)
+        InternalUser IBaseService<InternalUser>.Get(Guid Id)
         {
             using (var context = new Integration_ProjectContext())
             {
@@ -84,7 +85,7 @@ namespace Integration_Project.Services.UserService
                 }
             }
         }
-        List<User> IBaseService<InternalUser>.GetAll()
+        List<InternalUser> IBaseService<InternalUser>.GetAll()
         {
             using (var context = new Integration_ProjectContext())
             {

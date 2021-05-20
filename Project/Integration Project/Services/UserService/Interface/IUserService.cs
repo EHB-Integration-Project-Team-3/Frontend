@@ -7,6 +7,5 @@ using System.Threading.Tasks;
 
 namespace Integration_Project.Services.UserService.Interface {
     interface IUserService : IBaseService<InternalUser> {
-        public InternalUser Get(Guid Id);
     }
 }

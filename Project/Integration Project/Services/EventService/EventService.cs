@@ -33,8 +33,6 @@ namespace Integration_Project.Services.EventService {
                 }
             }
         }
-
-        public bool Delete(int Id) => throw new NotImplementedException();
         public bool Update(Event Event) {
             using (var context = new Integration_ProjectContext()) {
                 try {
@@ -49,7 +47,9 @@ namespace Integration_Project.Services.EventService {
                 }
             }
         }
-        Event IBaseService<Event>.Get(int Id) => throw new NotImplementedException();
+        Event IBaseService<Event>.Get(Guid Id) {
+
+        }
         List<Event> IBaseService<Event>.GetAll() {
             using (var context = new Integration_ProjectContext()) {
                 try {
@@ -62,7 +62,7 @@ namespace Integration_Project.Services.EventService {
                 }
             }
         }
-        List<Event> IEventService.GetAllForUser(Guid UserId) => throw new NotImplementedException();
+        List<Event> IEventService.GetAllForUser(Guid Id) => throw new NotImplementedException();
             /*{
             using (var context = new Integration_ProjectContext())
             {
