@@ -1,56 +1,103 @@
 ﻿using Integration_Project.Areas.Identity.Data;
 using Integration_Project.Models;
-using Integration_Project.Services.UserService.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Integration_Project.Services.EventService.Interface;
 
-namespace Integration_Project.Services.UserService {
-    public class UserService : IUserService {
-        public bool Add(InternalUser t) {
-            using (var context = new Integration_ProjectContext()) {
-                try {
-                    context.Add(t);
+namespace Integration_Project.Services.UserService
+{
+    public class UserService : IEventService
+    {
+        public bool Add(InternalUser User)
+        {
+            using (var context = new Integration_ProjectContext())
+            {
+                try
+                {
+                    context.Add(User);
                     context.SaveChanges();
                     return true;
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     Console.WriteLine(ex);
                     return false;
                 }
-
             }
         }
-        public bool Delete(int Id) => throw new NotImplementedException();
-        public InternalUser Get(int Id) => throw new NotImplementedException();
-        public InternalUser Get(Guid Id) {
-            using (var context = new Integration_ProjectContext()) {
-                try {
-                    return context.Users.Where(u => u.Uuid == Id).FirstOrDefault();
-                } catch (Exception ex) {
+        public bool Delete(Guid Id)
+        {
+            using (var context = new Integration_ProjectContext())
+            {
+                try
+                {
+                    var usr = context.Users
+                        .Where(u => u.Uuid == Id)
+                        .First<InternalUser>();
+                    context.Users.Remove(usr);
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    return false;
+                }
+            }
+        }
+        public bool Update(InternalUser User)
+        {
+            using (var context = new Integration_ProjectContext())
+            {
+                try
+                {
+                    var usr = context.Users
+                        .Where(u => u.Uuid == User.Uuid)
+                        .First<InternalUser>();
+                    usr = User;
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    return false;
+                }
+            }
+        }
+        User IBaseService<InternalUser>.Get(Guid Id)
+        {
+            using (var context = new Integration_ProjectContext())
+            {
+                try
+                {
+                    return context.Users
+                        .Where(u => u.Uuid == Id)
+                        .First<InternalUser>();
+                }
+                catch (Exception ex)
+                {
                     Console.WriteLine(ex);
                     return null;
                 }
-
             }
         }
-        public List<InternalUser> GetAll() => throw new NotImplementedException();
-        public List<InternalUser> GetAllForUser(Guid UserId) => throw new NotImplementedException();
-        public bool Update(InternalUser t) {
-            using (var context = new Integration_ProjectContext()) {
-                try {
-                    var user = context.Users.Where(u => u.Uuid == t.Uuid).FirstOrDefault();
-                    if (user != null) {
-                        context.Update(t);
-                        context.SaveChanges();
-                        return true;
-                    }
-                    return false;
-                } catch (Exception ex) {
-                    Console.WriteLine(ex);
-                    return false;
+        List<User> IBaseService<InternalUser>.GetAll()
+        {
+            using (var context = new Integration_ProjectContext())
+            {
+                try
+                {
+                    return context.Users
+                        .ToList();
                 }
-
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    return null;
+                }
             }
         }
     }

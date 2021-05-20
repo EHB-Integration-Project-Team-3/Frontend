@@ -1,12 +1,12 @@
-﻿using Integration_Project.Areas.Identity.Data;
-using Integration_Project.Models;
+﻿using Integration_Project.Models;
+using Integration_Project.Services.EventService.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Integration_Project.Services.EventService.Interface
-{
-    public interface IUserService : IBaseService<User> {
+namespace Integration_Project.Services.UserService.Interface {
+    interface IUserService : IBaseService<InternalUser> {
+        public InternalUser Get(Guid Id);
     }
 }
