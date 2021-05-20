@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using RabbitMQ;
 using Integration_Project.RabbitMQ;
 using Integration_Project.Services.MUUIDService.Interface;
+using Integration_Project.Models.Enums;
 
 namespace Integration_Project.Controllers
 {
@@ -15,6 +16,7 @@ namespace Integration_Project.Controllers
     {
         private readonly IEventService _eventService;
         private readonly IMUUIDService _muuidService;
+
         public EventController(IEventService eventService, IMUUIDService muuidService)
         {
             _eventService = eventService;
@@ -51,10 +53,9 @@ namespace Integration_Project.Controllers
             // adding event to database
             Ev.Header = new Header();
             Ev.Header.Method = Method.CREATE;
-            Ev.Header.Source = Source.FRONTEND;
             // ask new uuid to the masterUUID;
             Ev.Uuid = _muuidService.GetUUID();
-            Ev.OrganiserId = new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1");
+            Ev.OrganiserId = new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1"); //uuid van ingelogde user
             Ev.LocationRabbit = Ev.Location.ToString();
             Rabbit.Send<Event>(Ev, Constants.EventX);
             return RedirectToAction("Overview", "Event");

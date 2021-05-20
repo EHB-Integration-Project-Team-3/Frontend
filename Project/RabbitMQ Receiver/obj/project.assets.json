@@ -9014,23 +9014,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\michael.bracke\\.nuget\\packages\\": {},
+    "C:\\Users\\gebruiker\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
+      "projectUniqueName": "D:\\GitHub\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
       "projectName": "RabbitMQ Receiver",
-      "projectPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
-      "packagesPath": "C:\\Users\\michael.bracke\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\obj\\",
+      "projectPath": "D:\\GitHub\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
+      "packagesPath": "C:\\Users\\gebruiker\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\Frontend\\Project\\RabbitMQ Receiver\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\michael.bracke\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9044,8 +9044,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj": {
-              "projectPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj"
+            "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {
+              "projectPath": "D:\\GitHub\\Frontend\\Project\\Integration Project\\Integration Project.csproj"
             }
           }
         }
@@ -9080,7 +9080,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

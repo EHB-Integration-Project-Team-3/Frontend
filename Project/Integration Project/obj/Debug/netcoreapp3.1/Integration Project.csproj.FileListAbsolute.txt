@@ -1290,3 +1290,7 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
