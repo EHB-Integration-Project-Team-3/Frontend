@@ -24,7 +24,7 @@ namespace Integration_Project.RabbitMQ
 
                 channel.BasicPublish(
                     exchange: x,
-                    routingKey: "",
+                    routingKey: q,
                     basicProperties: null,
                     body: body);
             }

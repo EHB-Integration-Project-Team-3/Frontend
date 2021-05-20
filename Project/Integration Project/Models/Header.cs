@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Integration_Project.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -16,5 +17,10 @@ namespace Integration_Project.Models
 
         [XmlElement("source")]
         public Source Source { get; set; }
+
+        public Header()
+        {
+            Source = Source.FRONTEND;
+        }
     }
 }

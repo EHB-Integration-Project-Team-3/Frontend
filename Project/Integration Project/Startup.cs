@@ -4,6 +4,10 @@ using Integration_Project.Models;
 using Integration_Project.Services;
 using Integration_Project.Services.EventService;
 using Integration_Project.Services.EventService.Interface;
+using Integration_Project.Services.MUUIDService;
+using Integration_Project.Services.MUUIDService.Interface;
+using Integration_Project.Services.UserService;
+using Integration_Project.Services.UserService.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pomelo.EntityFrameworkCore.MySql.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,17 +35,34 @@ namespace Integration_Project {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddScoped<IEventService, EventService>();
+            services.AddScoped<IMUUIDService, MUUIDService>();
+            services.AddScoped<IUserService, UserService>();
+
+            // eigen DBcontext service voor connectie naar eigen database
             services.AddDbContext<Integration_ProjectContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            var _connectionStringMUUID = Configuration.GetConnectionString("MUUIDConnection");
+            services.AddDbContext<AMCDbContext>(
+                options => options.UseMySql(
+                    _connectionStringMUUID
+                )
+            );
+
+
+            // service om eigen usermodel aan ingebakken identityRole te linken
+
             services.AddIdentity<User, IdentityRole>(options => {
                 options.User.RequireUniqueEmail = false;
             }).AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<Integration_ProjectContext>();
 
+
+
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddTransient<IEmailSender,EmailSender>();
+            services.AddTransient<IEmailSender, EmailSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

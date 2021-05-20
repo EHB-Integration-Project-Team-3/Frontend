@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Integration_Project.Services.EventService.Interface {
     public interface IEventService : IBaseService<Event> {
-        public List<Event> GetAllForUser(Guid UserId);
+        public bool Delete(Guid Uuid);
     }
 }

@@ -21,62 +21,35 @@ namespace Integration_Project.Services.EventService {
                 }
             }
         }
-        public bool Delete(Guid Id) {
-            using (var context = new Integration_ProjectContext())
-            {
-                try
-                {
-                    var evt = context.Events
-                        .Where(e => e.Uuid == Id)
-                        .First<Event>();
-                    context.Events.Remove(evt);
+        public bool Delete(Guid Uuid) {
+            using (var context = new Integration_ProjectContext()) {
+                try {
+                    context.Remove(context.Events.Where(p => p.Uuid == Uuid).FirstOrDefault());
                     context.SaveChanges();
                     return true;
-                }
-                catch (Exception ex)
-                {
+                } catch (Exception ex) {
                     Console.WriteLine(ex);
                     return false;
                 }
             }
         }
+
+        public bool Delete(int Id) => throw new NotImplementedException();
         public bool Update(Event Event) {
-            using (var context = new Integration_ProjectContext())
-            {
-                try
-                {
-                    var evt = context.Events
-                        .Where(e => e.Uuid == Event.Uuid)
-                        .First<Event>();
-                    evt = Event;
+            using (var context = new Integration_ProjectContext()) {
+                try {
+                    var foundEvent = context.Events.Where(p => p.Uuid == Event.Uuid).FirstOrDefault();
+                    if (foundEvent != null)
+                        context.Update(Event);
                     context.SaveChanges();
                     return true;
-                }
-                catch (Exception ex)
-                {
+                } catch (Exception ex) {
                     Console.WriteLine(ex);
                     return false;
                 }
             }
         }
-        Event IBaseService<Event>.Get(Guid Id)
-        {
-            using (var context = new Integration_ProjectContext())
-            {
-                try
-                {
-                    return context.Events
-                        .Include(e => e.Location)
-                        .Where(e => e.Uuid == Id)
-                        .First<Event>();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                    return null;
-                }
-            }
-        }
+        Event IBaseService<Event>.Get(int Id) => throw new NotImplementedException();
         List<Event> IBaseService<Event>.GetAll() {
             using (var context = new Integration_ProjectContext()) {
                 try {

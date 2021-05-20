@@ -1,4 +1,5 @@
 ﻿using Integration_Project.Models;
+using Integration_Project.Services.MUUIDService.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -10,12 +11,15 @@ using System.Threading.Tasks;
 namespace Integration_Project.Controllers {
     public class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
+        private readonly IMUUIDService _muuidService;
 
-        public HomeController(ILogger<HomeController> logger) {
+        public HomeController(ILogger<HomeController> logger, IMUUIDService muuidService) {
             _logger = logger;
+            _muuidService = muuidService;
         }
 
         public IActionResult Index() {
+            var uuidFromMasterUUID = _muuidService.GetUUID();
             return View();
         }
 

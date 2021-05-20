@@ -22,7 +22,7 @@ namespace Integration_Project.Areas.Identity.Data {
 
         }
         public virtual DbSet<Event> Events { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<InternalUser> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             if (!optionsBuilder.IsConfigured) {

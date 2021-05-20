@@ -7,16 +7,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using RabbitMQ;
 using Integration_Project.RabbitMQ;
+using Integration_Project.Services.MUUIDService.Interface;
+using Integration_Project.Models.Enums;
 
 namespace Integration_Project.Controllers
 {
     public class EventController : Controller
     {
         private readonly IEventService _eventService;
+        private readonly IMUUIDService _muuidService;
 
-        public EventController(IEventService eventService)
+        public EventController(IEventService eventService, IMUUIDService muuidService)
         {
             _eventService = eventService;
+            _muuidService = muuidService;
         }
 
         public IActionResult Index()
@@ -46,20 +50,15 @@ namespace Integration_Project.Controllers
         //[UserPermission]
         public IActionResult CreateEvent(Event Ev)
         {
-            // handle ev save
-            //if (_eventService.Add(Ev))
-            //{
+            // adding event to database
             Ev.Header = new Header();
             Ev.Header.Method = Method.CREATE;
-            Ev.Header.Source = Source.FRONTEND;
-            Ev.Uuid = Guid.NewGuid();
-            Ev.OrganiserId = new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1");
+            // ask new uuid to the masterUUID;
+            Ev.Uuid = _muuidService.GetUUID();
+            Ev.OrganiserId = new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1"); //uuid van ingelogde user
             Ev.LocationRabbit = Ev.Location.ToString();
             Rabbit.Send<Event>(Ev, Constants.EventX);
             return RedirectToAction("Overview", "Event");
-            //}
-            //else
-            //    return null;
         }
     }
 }
