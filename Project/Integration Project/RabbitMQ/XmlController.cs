@@ -23,7 +23,7 @@ namespace Integration_Project.RabbitMQ
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                return "";
+                return null;
             }
         }
 
