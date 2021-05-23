@@ -83,3 +83,14 @@ html, body { height: 100%; margin: 0; background: linear-gradient(to bottom, #f3
 .aeu-signature { position: fixed; top: 5px; left: 50%; transform: translate(-50%); font-size: 15px; line-height: 30px; background-color: #fff; padding: 5px 10px; border-radius: 25px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 .aeu-signature { font-family: "Quicksand"; }
     .aeu-signature > img { height: 30px; }
+
+
+/*Images*/
+
+.logo {
+    max-width: 140px;
+}
+
+.placeholder {
+
+}
