@@ -91,6 +91,6 @@ html, body { height: 100%; margin: 0; background: linear-gradient(to bottom, #f3
     max-width: 140px;
 }
 
-.placeholder {
-
+.profile {
+    max-width: 80%;
 }
