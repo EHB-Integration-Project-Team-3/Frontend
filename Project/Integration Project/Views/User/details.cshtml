@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model InternalUser
+<div class="container">
+    <div class="row">
+        <div class="col-6 justify-content-center">
+            @*<img src=@Model.photo alt="profile picture">*@
+            <img src="~/Images/placeholder.jpg" alt="profile picture">
+        </div>
+        <div class="col-6">
+            <form>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" value=@Model.EmailAddress>
+                <input type="submit" value="submit" id="submitEmail"><br>
+
+                <label for="firstname">Voornaam:</label><br>
+                <input type="text" id="firstname" name="firstname" value=@Model.FirstName>
+                <input type="submit" value="submit" id="submitFirstName"><br>
+
+                <label for="lastname">Achternaam:</label><br>
+                <input type="text" id="lastname" name="lastname" value=@Model.LastName>
+                <input type="submit" value="submit" id="submitLastName"><br>
+            </form>
+        </div>
+    </div>
+</div>
