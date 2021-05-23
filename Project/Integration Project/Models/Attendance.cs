@@ -7,17 +7,20 @@ using System.Xml.Serialization;
 
 namespace Integration_Project.Models
 {
-    [XmlRoot(ElementName = "attendance ")]
+    [XmlRoot(ElementName = "attendance")]
     public class Attendance
     {
+        [XmlElement("header")]
+        public Header Header { get; set; }
+
         [Key]
-        [XmlAttribute("uuid")]
+        [XmlElement("uuid")]
         public Guid Uuid { get; set; }
 
-        [XmlAttribute("userId")]
+        [XmlElement("userId")]
         public Guid UserId { get; set; }
 
-        [XmlAttribute("eventId")]
+        [XmlElement("eventId")]
         public Guid EventId { get; set; }
     }
 }

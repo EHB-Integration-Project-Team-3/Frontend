@@ -44,7 +44,9 @@ namespace RabbitMQ_Receiver
                     Console.WriteLine($"\nReceived Event:\n{message}");
 
                     Event receivedEvent = XmlController.DeserializeXmlString<Event>(message);
-                    Console.WriteLine($"\nEvent succesfully deserialized");
+
+                    if (receivedEvent != default)
+                        Console.WriteLine($"\nEvent succesfully deserialized");
 
                     receivedEvent.Location = Location.FromRabbitMQ(receivedEvent.LocationRabbit);
 
@@ -69,7 +71,9 @@ namespace RabbitMQ_Receiver
                     Console.WriteLine($"\nReceived User:\n{message}");
 
                     InternalUser receivedUser = XmlController.DeserializeXmlString<InternalUser>(message);
-                    Console.WriteLine($"\nUser succesfully deserialized");
+
+                    if (receivedUser != default)
+                        Console.WriteLine($"\nUser succesfully deserialized");
 
                     if (receivedUser.Header.Method == Method.CREATE)
                     {
@@ -95,7 +99,7 @@ namespace RabbitMQ_Receiver
             finally
             {
                 Console.WriteLine("\nWaiting for message...");
-                await Task.Delay(250);
+                await Task.Delay(1000);
             }
         }
     }

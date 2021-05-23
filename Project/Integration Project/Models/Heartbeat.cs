@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Integration_Project.Models
 {
-    [XmlRoot(ElementName = "Heartbeat ")]
+    [XmlRoot(ElementName = "heartbeat")]
     public class Heartbeat
     {
         [XmlElement("header")]

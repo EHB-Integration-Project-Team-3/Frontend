@@ -2,7 +2,7 @@
 {
     public enum Role
     {
-        Student,
-        Lecturer
+        student,
+        lecturer
     }
 }
