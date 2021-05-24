@@ -9,32 +9,26 @@ using RabbitMQ;
 using Integration_Project.RabbitMQ;
 using Integration_Project.Areas.Identity.Data;
 using Integration_Project.Services.UserService.Interface;
+using Integration_Project.Extensions;
 
-namespace Integration_Project.Controllers
-{
-    public class UserController : Controller
-    {
+namespace Integration_Project.Controllers {
+    public class UserController : Controller {
         private readonly IUserService _userService;
 
-        public UserController(IUserService userService)
-        {
+        public UserController(IUserService userService) {
             _userService = userService;
         }
-        public IActionResult Index()
-        {
+        public IActionResult Index() {
             return View();
         }
 
-        public IActionResult Overview()
-        {
+        public IActionResult Overview() {
             var Events = _userService.GetAll();
             return View(Events);
         }
 
-        public IActionResult Detail()
-        {
-            var InternalUser = new InternalUser
-            {
+        public IActionResult Detail() {
+            var InternalUser = new InternalUser {
                 EmailAddress = "test@test.test",
                 FirstName = "jos",
                 LastName = "joske",
@@ -42,15 +36,25 @@ namespace Integration_Project.Controllers
             return View("details", InternalUser);
         }
 
-        //[UserPermission]
-        public IActionResult Edit()
-        {
+        [HttpPost]
+        public IActionResult Validate(string Email, string Wachtwoord) {
+            var user = _userService.Validate(Email, Wachtwoord);
+            if (user != null) {
+                HttpContext.Session.Set("User", ModelHelper<InternalUser>.ObjectToByteArray(user));
+            } else {
+                HttpContext.Session.Set("Error", ModelHelper<InternalUser>.ObjectToByteArray("Gelieve jouw credentials na te kijken."));
+                return Redirect("/Identity/Account/Login");
+            };
             return View();
         }
 
         //[UserPermission]
-        public IActionResult Create()
-        {
+        public IActionResult Edit() {
+            return View();
+        }
+
+        //[UserPermission]
+        public IActionResult Create() {
             return View();
         }
 

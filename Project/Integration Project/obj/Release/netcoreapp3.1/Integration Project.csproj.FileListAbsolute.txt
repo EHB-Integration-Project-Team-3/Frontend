@@ -1802,3 +1802,7 @@ C:\Users\yonic\Source\Repos\Frontend\Project\Integration Project\obj\Release\net
 C:\Users\yonic\Source\Repos\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.dll
 C:\Users\yonic\Source\Repos\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.pdb
 C:\Users\yonic\Source\Repos\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Integration Project.genruntimeconfig.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\MySqlConnector.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\Pomelo.JsonObject.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\User\details.cshtml.g.cs

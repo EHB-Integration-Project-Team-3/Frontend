@@ -53,5 +53,22 @@ namespace Integration_Project.Services.UserService {
 
             }
         }
+
+        public InternalUser Validate(string email, string wachtwoord) {
+            //TODO: adding password check!!!
+            using (var context = new Integration_ProjectContext()) {
+                try {
+                    var user = context.Users.Where(u => u.EmailAddress == email).FirstOrDefault();
+                    if (user != null) {
+                        return user;
+                    }
+                    return null;
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
+                    return null;
+                }
+
+            }
+        }
     }
 }

@@ -8,5 +8,6 @@ using System.Threading.Tasks;
 namespace Integration_Project.Services.UserService.Interface {
     public interface IUserService : IBaseService<InternalUser> {
         public InternalUser Get(Guid Id);
+        public InternalUser Validate(string email, string wachtwoord);
     }
 }

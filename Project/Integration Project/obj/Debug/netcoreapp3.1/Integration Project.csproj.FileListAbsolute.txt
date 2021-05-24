@@ -1294,3 +1294,4 @@ D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\MySqlConn
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\User\details.cshtml.g.cs
