@@ -55,7 +55,7 @@ namespace Integration_Project.Controllers
             Ev.Header.Method = Method.CREATE;
             // ask new uuid to the masterUUID;
             Ev.Uuid = _muuidService.GetUUID();
-            Ev.OrganiserId = new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1"); //uuid van ingelogde user
+            Ev.OrganiserId = new Guid("172DC55B-BD86-11EB-B876-00155D110504"); //uuid van ingelogde user
             Ev.LocationRabbit = Ev.Location.ToString();
             Rabbit.Send<Event>(Ev, Constants.EventX);
             return RedirectToAction("Overview", "Event");

@@ -8,6 +8,7 @@ using Integration_Project.Models;
 using Integration_Project.Services.EventService;
 using Integration_Project.Models.Enums;
 using Integration_Project.Services.UserService;
+using System.Threading;
 
 namespace RabbitMQ_Receiver
 {
@@ -15,6 +16,8 @@ namespace RabbitMQ_Receiver
     {
         public static void Main(string[] args)
         {
+            new Timer((e) => { Rabbit.Send<Heartbeat>(new Heartbeat(), "", Integration_Project.RabbitMQ.Constants.MonitoringHeartbeatQ); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
+
             var factory = new ConnectionFactory() { Uri = new Uri(Integration_Project.RabbitMQ.Constants.Connection), DispatchConsumersAsync = true };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
