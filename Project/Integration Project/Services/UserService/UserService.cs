@@ -41,7 +41,12 @@ namespace Integration_Project.Services.UserService {
                 try {
                     var user = context.Users.Where(u => u.Uuid == t.Uuid).FirstOrDefault();
                     if (user != null) {
-                        context.Update(t);
+                        user.EmailAddress = t.EmailAddress;
+                        user.EntityVersion = t.EntityVersion;
+                        user.FirstName = t.FirstName;
+                        user.LastName = t.LastName;
+                        user.Role = t.Role;                       
+                        context.Update(user);
                         context.SaveChanges();
                         return true;
                     }
