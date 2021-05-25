@@ -25,7 +25,10 @@
         </div>
     </div>
     <div class="row d-flex justify-content-center my-5">
-        <button class="btn btn-outline-secondary mx-2" onclick="location.href='@Url.Action("Overview", "Event")'"><h1 class="display-4"><img src="~/images/Events/party.png"/>Events</h1></button>
-        <button class="btn btn-outline-secondary mx-2" onclick="location.href='@Url.Action("Create", "Event")'"><h1 class="display-4">Event Toevoegen</h1></button>
+        <button class="btn btn-outline-secondary mx-2" onclick="location.href='@Url.Action("Overview", "Event")'"><h1 class="display-4"><img src="~/images/Events/party.png" />Events</h1></button>
+        @{ if (Integration_Project.Extensions.HttpHelper.CheckLoggedUser() != null) {
+                <button class="btn btn-outline-secondary mx-2" onclick="location.href='@Url.Action("Create", "Event")'"><h1 class="display-4">Event Toevoegen</h1></button>
+            }
+        }
     </div>
 </div>

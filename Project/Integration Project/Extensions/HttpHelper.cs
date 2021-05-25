@@ -16,7 +16,7 @@ namespace Integration_Project.Extensions {
             if (userSes != null) {
                 user = (InternalUser) ModelHelper<InternalUser>.ObjectFromByteArray(userSes);
             } else {
-                context.HttpContext.Response.Redirect("/Home/Index");
+                return null;
             }
 
             return user;
