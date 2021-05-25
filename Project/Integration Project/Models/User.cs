@@ -9,6 +9,7 @@ using System.Xml.Serialization;
 namespace Integration_Project.Models
 {
     [XmlRoot(ElementName = "user")]
+    [Serializable]
     public class InternalUser
     {
         [XmlElement("header")]

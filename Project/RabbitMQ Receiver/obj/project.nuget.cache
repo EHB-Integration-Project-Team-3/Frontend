@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Jk5t7/6WDoXAd04ubCt0hDzqq39wjuSfMyyp0nyr0vm4fpaXbreMXKoqO1ifEbbu99lnMZzX+kfvgymxtDBbqQ==",
+  "dgSpecHash": "K6FPLmDe7jzN8ZbWPoh8rW2CR0xAC10uqtqiZe7COSQvhpfYpdW6K6PyWVgVpRSSqma0Z2QUSmRLXOnWdY/J8Q==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.13\\microsoft.aspnetcore.cryptography.internal.3.1.13.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.13\\microsoft.aspnetcore.cryptography.keyderivation.3.1.13.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.12\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.12.nupkg.sha512",
@@ -67,6 +68,7 @@
     "C:\\Users\\michael.bracke\\.nuget\\packages\\mysqlconnector\\0.61.0\\mysqlconnector.0.61.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\3.1.2\\pomelo.entityframeworkcore.mysql.3.1.2.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",

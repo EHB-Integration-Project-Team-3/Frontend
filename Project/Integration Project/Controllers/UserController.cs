@@ -27,6 +27,7 @@ namespace Integration_Project.Controllers {
             return View(Events);
         }
 
+        [UserPermission]
         public IActionResult Detail() {
             var InternalUser = new InternalUser {
                 EmailAddress = "test@test.test",
@@ -45,7 +46,7 @@ namespace Integration_Project.Controllers {
                 HttpContext.Session.Set("Error", ModelHelper<InternalUser>.ObjectToByteArray("Gelieve jouw credentials na te kijken."));
                 return Redirect("/Identity/Account/Login");
             };
-            return View();
+            return RedirectToAction("Index","Home");
         }
 
         //[UserPermission]

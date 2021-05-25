@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Integration_Project.Extensions;
+using Integration_Project.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Integration_Project
-{
-    public class UserPermission : AuthorizeAttribute, IAuthorizationFilter
-    {
+namespace Integration_Project {
+    public class UserPermission : AuthorizeAttribute, IAuthorizationFilter {
         public string Permissions { get; set; } //Permission string to get from controller
-
-        public void OnAuthorization(AuthorizationFilterContext context)
-        {
+       
+        public void OnAuthorization(AuthorizationFilterContext context) {
             //Validate if any permissions are passed when using attribute at controller or action level
             //if (string.IsNullOrEmpty(Permissions)) {
             //    //Validation cannot take place without any permissions so returning unauthorized
@@ -35,13 +34,16 @@ namespace Integration_Project
             /// return => geldige validatie
             /// redirectResult => ongeldige valdatie
             ///
-
-            //var userName = AuthService.CheckLoggedUser();
-            //if (userName.IsAdmin)
-            return;
-
-            //context.Result = new RedirectResult(string.Format("/Admin/Home/Index"));
-            //return;
+            var user = HttpHelper.CheckLoggedUser();
+            if (user != null) {
+                
+                return;
+            }
+            else {
+                context.Result = new RedirectResult(string.Format("/Home/Index"));
+                return;
+            }
+            
         }
     }
 }

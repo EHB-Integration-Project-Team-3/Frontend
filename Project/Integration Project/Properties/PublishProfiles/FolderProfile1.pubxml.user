@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
-    <History>True|2021-05-24T20:25:28.3569816Z;True|2021-05-12T09:47:23.8756688+02:00;True|2021-05-12T09:04:38.5647768+02:00;True|2021-05-06T22:29:30.9718026+02:00;True|2021-05-06T22:05:12.9236041+02:00;True|2021-05-06T21:34:20.3927641+02:00;</History>
+    <History>True|2021-05-25T18:26:40.4441155Z;True|2021-05-24T22:25:28.3569816+02:00;True|2021-05-12T09:47:23.8756688+02:00;True|2021-05-12T09:04:38.5647768+02:00;True|2021-05-06T22:29:30.9718026+02:00;True|2021-05-06T22:05:12.9236041+02:00;True|2021-05-06T21:34:20.3927641+02:00;</History>
   </PropertyGroup>
 </Project>

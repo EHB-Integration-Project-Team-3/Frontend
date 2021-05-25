@@ -1806,3 +1806,5 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreap
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\Pomelo.JsonObject.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\User\details.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
