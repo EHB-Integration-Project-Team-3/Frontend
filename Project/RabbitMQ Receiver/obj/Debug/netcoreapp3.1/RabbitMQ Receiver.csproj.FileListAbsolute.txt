@@ -834,3 +834,5 @@ D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Pomelo.Json
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
