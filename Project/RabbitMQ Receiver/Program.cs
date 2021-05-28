@@ -16,8 +16,10 @@ namespace RabbitMQ_Receiver
     {
         public static void Main(string[] args)
         {
+            //Heartbeat
             new Timer((e) => { Rabbit.Send<Heartbeat>(new Heartbeat(), "", Integration_Project.RabbitMQ.Constants.MonitoringHeartbeatQ); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
 
+            //Consumers
             var factory = new ConnectionFactory() { Uri = new Uri(Integration_Project.RabbitMQ.Constants.Connection), DispatchConsumersAsync = true };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
@@ -29,6 +31,9 @@ namespace RabbitMQ_Receiver
                                          autoAck: true,
                                          consumer: consumer);
             channel.BasicConsume(queue: Integration_Project.RabbitMQ.Constants.FrontendUserQ,
+                                         autoAck: true,
+                                         consumer: consumer);
+            channel.BasicConsume(queue: Integration_Project.RabbitMQ.Constants.FrontendAttendanceQ,
                                          autoAck: true,
                                          consumer: consumer);
 
@@ -53,20 +58,33 @@ namespace RabbitMQ_Receiver
 
                     receivedEvent.Location = Location.FromRabbitMQ(receivedEvent.LocationRabbit);
 
-                    if (receivedEvent.Header.Method == Method.CREATE)
+                    try
                     {
-                        if (new EventService().Add(receivedEvent))
-                            Console.WriteLine($"\nEvent successfully added to Frontend database");
+                        if (receivedEvent.Header.Method == Method.CREATE)
+                        {
+                            if (new EventService().Add(receivedEvent))
+                                Console.WriteLine($"\nEvent successfully added to database");
+                            else
+                                Console.WriteLine($"\nFailed to add event to database");
+                        }
+                        else if (receivedEvent.Header.Method == Method.UPDATE)
+                        {
+                            if (new EventService().Update(receivedEvent))
+                                Console.WriteLine($"\nEvent successfully updated in database");
+                            else
+                                Console.WriteLine($"\nFailed to update event in database");
+                        }
+                        else if (receivedEvent.Header.Method == Method.DELETE)
+                        {
+                            if (new EventService().Delete(receivedEvent.Uuid))
+                                Console.WriteLine($"\nEvent successfully deleted from database");
+                            else
+                                Console.WriteLine($"\nFailed to delete event from database");
+                        }
                     }
-                    else if (receivedEvent.Header.Method == Method.UPDATE)
+                    catch (Exception ex)
                     {
-                        if (new EventService().Update(receivedEvent))
-                            Console.WriteLine($"\nEvent successfully updated in Frontend database");
-                    }
-                    else if (receivedEvent.Header.Method == Method.DELETE)
-                    {
-                        if (new EventService().Delete(receivedEvent.Uuid))
-                            Console.WriteLine($"\nEvent successfully deleted from Frontend database");
+                        Console.WriteLine(ex);
                     }
                 }
                 else if (@event.Exchange == Integration_Project.RabbitMQ.Constants.UserX)
@@ -78,21 +96,38 @@ namespace RabbitMQ_Receiver
                     if (receivedUser != default)
                         Console.WriteLine($"\nUser succesfully deserialized");
 
-                    if (receivedUser.Header.Method == Method.CREATE)
+                    try
                     {
-                        if (new UserService().Add(receivedUser))
-                            Console.WriteLine($"\nUser successfully added to Frontend database");
+                        if (receivedUser.Header.Method == Method.CREATE)
+                        {
+                            if (new UserService().Add(receivedUser))
+                                Console.WriteLine($"\nUser successfully added to database");
+                            else
+                                Console.WriteLine($"\nFailed to add user to database");
+                        }
+                        else if (receivedUser.Header.Method == Method.UPDATE)
+                        {
+                            if (new UserService().Update(receivedUser))
+                                Console.WriteLine($"\nUser successfully updated in database");
+                            else
+                                Console.WriteLine($"\nFailed to update user in database");
+                        }
+                        else if (receivedUser.Header.Method == Method.DELETE)
+                        {
+                            //if (new UserService().Delete(receivedUser.Uuid))
+                            //    Console.WriteLine($"\nUser successfully deleted from database");
+                            //else
+                            //    Console.WriteLine($"\nFailed to delete user from database");
+                        }
                     }
-                    else if (receivedUser.Header.Method == Method.UPDATE)
+                    catch (Exception ex)
                     {
-                        if (new UserService().Update(receivedUser))
-                            Console.WriteLine($"\nUser successfully updated in Frontend database");
+                        Console.WriteLine(ex);
                     }
-                    else if (receivedUser.Header.Method == Method.DELETE)
-                    {
-                        //if (new UserService().Delete(receivedUser.Uuid))
-                        //    Console.WriteLine($"\nUser successfully deleted from Frontend database");
-                    }
+                }
+                else if (@event.Exchange == Integration_Project.RabbitMQ.Constants.AttendanceX)
+                {
+                    //moet frontend attendance kunnen ontvangen????
                 }
             }
             catch (Exception ex)

@@ -36,6 +36,20 @@ namespace Integration_Project.Controllers
         }
 
         //[UserPermission]
+        public IActionResult Detail(Event Evt)
+        {
+            var user = HttpHelper.CheckLoggedUser();
+            if (user != null /*&& user.Uuid == Evt.OrganiserId*/)
+            {
+                return View("Detail", Evt);
+            }
+            else
+            {
+                return Redirect("/");
+            }
+        }
+
+        //[UserPermission]
         public IActionResult Edit()
         {
             return View();

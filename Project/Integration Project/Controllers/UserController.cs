@@ -27,14 +27,17 @@ namespace Integration_Project.Controllers {
             return View(Events);
         }
 
-        [UserPermission]
+        //[UserPermission]
         public IActionResult Detail() {
-            var InternalUser = new InternalUser {
-                EmailAddress = "test@test.test",
-                FirstName = "jos",
-                LastName = "joske",
-            };
-            return View("details", InternalUser);
+            var user = HttpHelper.CheckLoggedUser();
+            if (user != null)
+            {
+                return View("details", user);
+            }
+            else
+            {
+                return Redirect("/");
+            }
         }
 
         [HttpPost]

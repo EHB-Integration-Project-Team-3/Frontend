@@ -1808,3 +1808,7 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreap
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\User\details.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\yonic\Source\Repos\Frontend\Project\Integration Project\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\yonic\Source\Repos\Frontend\Project\Integration Project\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\yonic\Source\Repos\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Shared\Components\Auth\Default.cshtml.g.cs
+C:\Users\yonic\Source\Repos\Frontend\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Shared\Components\Auth\_LoginPartial.cshtml.g.cs
