@@ -1296,10 +1296,14 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Auth\Default.cshtml.g.cs
-C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Auth\_LoginPartial.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Auth\Default.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Auth\_LoginPartial.cshtml.g.cs
 D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\User\details.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\libman.json
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\Autofac.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Detail.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache

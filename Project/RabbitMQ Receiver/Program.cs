@@ -9,13 +9,15 @@ using Integration_Project.Services.EventService;
 using Integration_Project.Models.Enums;
 using Integration_Project.Services.UserService;
 using System.Threading;
+using Integration_Project.Services.MUUIDService;
+using Integration_Project.Services.MUUIDService.Interface;
 
-namespace RabbitMQ_Receiver
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
+namespace RabbitMQ_Receiver {
+    public class Program {
+        private static readonly IMUUIDService _muuidService;
+
+
+        public static void Main(string[] args) {
             //Heartbeat
             new Timer((e) => { Rabbit.Send<Heartbeat>(new Heartbeat(), "", Integration_Project.RabbitMQ.Constants.MonitoringHeartbeatQ); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
 
@@ -41,14 +43,11 @@ namespace RabbitMQ_Receiver
             Console.ReadLine();
         }
 
-        private static async Task Consumer_Received(object sender, BasicDeliverEventArgs @event)
-        {
-            try
-            {
+        private static async Task Consumer_Received(object sender, BasicDeliverEventArgs @event) {
+            try {
                 var message = Encoding.UTF8.GetString(@event.Body.ToArray());
 
-                if (@event.Exchange == Integration_Project.RabbitMQ.Constants.EventX)
-                {
+                if (@event.Exchange == Integration_Project.RabbitMQ.Constants.EventX) {
                     Console.WriteLine($"\nReceived Event:\n{message}");
 
                     Event receivedEvent = XmlController.DeserializeXmlString<Event>(message);
@@ -58,37 +57,27 @@ namespace RabbitMQ_Receiver
 
                     receivedEvent.Location = Location.FromRabbitMQ(receivedEvent.LocationRabbit);
 
-                    try
-                    {
-                        if (receivedEvent.Header.Method == Method.CREATE)
-                        {
+                    try {
+                        if (receivedEvent.Header.Method == Method.CREATE) {
                             if (new EventService().Add(receivedEvent))
                                 Console.WriteLine($"\nEvent successfully added to database");
                             else
                                 Console.WriteLine($"\nFailed to add event to database");
-                        }
-                        else if (receivedEvent.Header.Method == Method.UPDATE)
-                        {
+                        } else if (receivedEvent.Header.Method == Method.UPDATE) {
                             if (new EventService().Update(receivedEvent))
                                 Console.WriteLine($"\nEvent successfully updated in database");
                             else
                                 Console.WriteLine($"\nFailed to update event in database");
-                        }
-                        else if (receivedEvent.Header.Method == Method.DELETE)
-                        {
+                        } else if (receivedEvent.Header.Method == Method.DELETE) {
                             if (new EventService().Delete(receivedEvent.Uuid))
                                 Console.WriteLine($"\nEvent successfully deleted from database");
                             else
                                 Console.WriteLine($"\nFailed to delete event from database");
                         }
-                    }
-                    catch (Exception ex)
-                    {
+                    } catch (Exception ex) {
                         Console.WriteLine(ex);
                     }
-                }
-                else if (@event.Exchange == Integration_Project.RabbitMQ.Constants.UserX)
-                {
+                } else if (@event.Exchange == Integration_Project.RabbitMQ.Constants.UserX) {
                     Console.WriteLine($"\nReceived User:\n{message}");
 
                     InternalUser receivedUser = XmlController.DeserializeXmlString<InternalUser>(message);
@@ -96,46 +85,32 @@ namespace RabbitMQ_Receiver
                     if (receivedUser != default)
                         Console.WriteLine($"\nUser succesfully deserialized");
 
-                    try
-                    {
-                        if (receivedUser.Header.Method == Method.CREATE)
-                        {
+                    try {
+                        if (receivedUser.Header.Method == Method.CREATE) {
                             if (new UserService().Add(receivedUser))
                                 Console.WriteLine($"\nUser successfully added to database");
                             else
                                 Console.WriteLine($"\nFailed to add user to database");
-                        }
-                        else if (receivedUser.Header.Method == Method.UPDATE)
-                        {
+                        } else if (receivedUser.Header.Method == Method.UPDATE) {
                             if (new UserService().Update(receivedUser))
                                 Console.WriteLine($"\nUser successfully updated in database");
                             else
                                 Console.WriteLine($"\nFailed to update user in database");
-                        }
-                        else if (receivedUser.Header.Method == Method.DELETE)
-                        {
+                        } else if (receivedUser.Header.Method == Method.DELETE) {
                             //if (new UserService().Delete(receivedUser.Uuid))
                             //    Console.WriteLine($"\nUser successfully deleted from database");
                             //else
                             //    Console.WriteLine($"\nFailed to delete user from database");
                         }
-                    }
-                    catch (Exception ex)
-                    {
+                    } catch (Exception ex) {
                         Console.WriteLine(ex);
                     }
-                }
-                else if (@event.Exchange == Integration_Project.RabbitMQ.Constants.AttendanceX)
-                {
+                } else if (@event.Exchange == Integration_Project.RabbitMQ.Constants.AttendanceX) {
                     //moet frontend attendance kunnen ontvangen????
                 }
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Console.WriteLine(ex);
-            }
-            finally
-            {
+            } finally {
                 Console.WriteLine("\nWaiting for message...");
                 await Task.Delay(1000);
             }

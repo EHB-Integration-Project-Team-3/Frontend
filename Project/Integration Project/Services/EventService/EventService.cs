@@ -49,7 +49,22 @@ namespace Integration_Project.Services.EventService {
                 }
             }
         }
-        Event IBaseService<Event>.Get(int Id) => throw new NotImplementedException();
+
+
+        public Event Get(int Id) {
+            using (var context = new Integration_ProjectContext()) {
+                try {
+                    return context.Events
+                        .Where(e => e.Id == Id)
+                        .Include(e => e.Location)
+                        .FirstOrDefault();
+
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
+                    return null;
+                }
+            }
+        }
         List<Event> IBaseService<Event>.GetAll() {
             using (var context = new Integration_ProjectContext()) {
                 try {

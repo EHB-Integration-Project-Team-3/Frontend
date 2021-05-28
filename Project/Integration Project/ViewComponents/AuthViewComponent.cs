@@ -11,7 +11,7 @@ namespace Integration_Project.ViewComponents {
         {
             var user = HttpHelper.CheckLoggedUser();
             if (user != null)
-                return View();
+                return View(user);
             else
                 return View("_LoginPartial");
         }

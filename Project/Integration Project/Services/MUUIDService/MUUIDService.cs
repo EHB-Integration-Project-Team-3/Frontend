@@ -1,4 +1,5 @@
 ﻿using Integration_Project.Models;
+using Integration_Project.Models.Enums;
 using Integration_Project.Models.MUUID.Receive;
 using Integration_Project.Models.MUUID.Send;
 using Integration_Project.Services.MUUIDService.Interface;
@@ -19,10 +20,53 @@ namespace Integration_Project.Services.MUUIDService {
             _config = config;
         }
 
-        public Guid InsertIntoMUUID(MUUIDSend sendModel) {
-            using (var context = new ReceiverContextMUUID()) {
-                var response = context.MUUIDS.FromSqlRaw("SELECT UUID()");
-                return response.FirstOrDefault().MUUID;
+        public void InsertIntoMUUID(MUUIDSend sendModel) {
+            string constring = _config.GetConnectionString("MUUIDConnection");
+            string sql =
+                $"INSERT INTO master ( UUID, Source_EntityId, EntityType, Source) VALUES(" +
+                $"UUID_TO_BIN('{sendModel.Uuid}')," +
+                $"'{sendModel.Source_EntityId}'," +
+                $"'{sendModel.EntityType}'," +
+                $"'{sendModel.Source}');";
+            try {
+                using (MySqlConnection connection = new MySqlConnection(constring)) {
+                    connection.Open();
+                    using (MySqlCommand command = new MySqlCommand(sql, connection)) {
+                        using (MySqlDataReader reader = command.ExecuteReader()) {
+
+                        }
+                    }
+                    connection.Close();
+                }
+            } catch (Exception ex) {
+                Console.WriteLine("Error inserting model in muuid, please check connection or service");
+            }
+        }
+
+        public MUUIDReceive Get(Guid uuid) {
+            string constring = _config.GetConnectionString("MUUIDConnection");
+            string sql = $"SELECT * FROM master WHERE UUID = UUID_TO_BIN('{uuid}');";
+            MUUIDReceive receivedModal = new MUUIDReceive();
+            try {
+                using (MySqlConnection connection = new MySqlConnection(constring)) {
+                    connection.Open();
+                    using (MySqlCommand command = new MySqlCommand(sql, connection)) {
+                        using (MySqlDataReader reader = command.ExecuteReader()) {
+                            while (reader.Read()) {
+                                receivedModal.Uuid = new Guid((byte[])reader.GetValue(1));
+                                receivedModal.Source_EntityId = (string) reader.GetValue(2);
+                                receivedModal.EntityType = (string) reader.GetValue(3);
+                                receivedModal.EntityVersion = (int) reader.GetValue(4);
+                                receivedModal.Source = (string) reader.GetValue(5);
+                            }
+                        }
+                    }
+                    connection.Close();
+                    return receivedModal;
+                }
+            } catch (Exception ex) {
+                Console.WriteLine("Error retrieving muuid, please check connection or service");
+                return null;
             }
         }
 

@@ -41,12 +41,10 @@ namespace Integration_Project {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
 
-            var start = new start();
-
-            //services.AddScoped<IEventService, EventService>();
+            services.AddScoped<IEventService, EventService>();
             services.AddScoped<IMUUIDService, MUUIDService>();
-            //services.AddScoped<IUserService, UserService>();
-     
+            services.AddScoped<IUserService, UserService>();
+
 
             // eigen DBcontext service voor connectie naar eigen database
             services.AddDbContext<Integration_ProjectContext>(options =>

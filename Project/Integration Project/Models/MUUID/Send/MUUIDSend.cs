@@ -9,7 +9,8 @@ namespace Integration_Project.Models.MUUID.Send
 {
     public class MUUIDSend
     {
-        public int Source_EntityId { get; set; }
+        public Guid Uuid { get; set; }
+        public string Source_EntityId { get; set; }
         public EntityType EntityType { get; set; }
         public Source Source { get; set; } = Source.FRONTEND;
     }

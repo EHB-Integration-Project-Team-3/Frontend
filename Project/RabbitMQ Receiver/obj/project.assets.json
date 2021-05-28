@@ -9135,19 +9135,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yonic\\.nuget\\packages\\": {}
+    "C:\\Users\\michael.bracke\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
+      "projectUniqueName": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
       "projectName": "RabbitMQ Receiver",
-      "projectPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
-      "packagesPath": "C:\\Users\\yonic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\obj\\",
+      "projectPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
+      "packagesPath": "C:\\Users\\michael.bracke\\.nuget\\packages\\",
+      "outputPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\yonic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\michael.bracke\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9155,14 +9159,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://ciserver:8080/httpAuth/app/nuget/feed/BecosoftCore/default/v2": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {
-              "projectPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj"
+            "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj": {
+              "projectPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj"
             }
           }
         }
@@ -9197,7 +9202,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

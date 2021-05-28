@@ -5,15 +5,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Integration_Project.Models
-{
+namespace Integration_Project.Models {
     [XmlRoot(ElementName = "event")]
-    public class Event
-    {
+    public class Event {
+
         [XmlElement("header")]
         public Header Header { get; set; }
 
         [Key]
+        public int Id { get; set; }
+
         [XmlElement("uuid")]
         public Guid Uuid { get; set; }
 

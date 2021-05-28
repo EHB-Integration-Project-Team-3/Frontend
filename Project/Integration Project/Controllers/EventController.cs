@@ -49,15 +49,39 @@ namespace Integration_Project.Controllers
             }
         }
 
-        //[UserPermission]
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            var ev = _eventService.Get(id);
+            return View(ev);
+        }
+
+
+        [HttpPost]
+        public IActionResult Update(Event ev){
+            var eventMuid = _muuidService.Get(ev.Uuid);
+            if(ev.EntityVersion < eventMuid.EntityVersion) {
+                // Hier moet er dan via de consumer een update worden binnen gehaald
+            } else {
+                _eventService.Update(ev);
+            }
+            return RedirectToAction("Edit", "Event");
         }
 
         //[UserPermission]
         public IActionResult Create()
         {
+            return View();
+        }
+
+        public IActionResult Test() {
+
+            var x =  _muuidService.Get(Guid.Parse("3d597104-bfb1-11eb-b876-00155d110504"));
+            //_muuidService.InsertIntoMUUID(new Models.MUUID.Send.MUUIDSend {
+            //    EntityType = EntityType.Event,
+            //    Source = Source.FRONTEND,
+            //    Source_EntityId = 1,
+            //    Uuid = uuid
+            //});            
             return View();
         }
 
@@ -73,6 +97,14 @@ namespace Integration_Project.Controllers
             Ev.Uuid = _muuidService.GetUUID();
             Ev.OrganiserId = user != null ? user.Uuid : new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1"); //uuid van ingelogde user
             Ev.LocationRabbit = Ev.Location.ToString();
+            // create new row in MUUID
+            _muuidService.InsertIntoMUUID(new Models.MUUID.Send.MUUIDSend {
+                EntityType = EntityType.Event,
+                Source = Source.FRONTEND,
+                Source_EntityId = Ev.Id.ToString(),
+                Uuid = Ev.Uuid
+            });
+            // set on rabbit que to other platforms
             Rabbit.Send<Event>(Ev, Constants.EventX);
             return RedirectToAction("Overview", "Event");
         }
