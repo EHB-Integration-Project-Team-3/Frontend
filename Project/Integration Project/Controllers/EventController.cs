@@ -39,7 +39,7 @@ namespace Integration_Project.Controllers
         public IActionResult Detail(Event Evt)
         {
             var user = HttpHelper.CheckLoggedUser();
-            if (user != null)
+            if (user != null /*&& user.Uuid == Evt.OrganiserId*/)
             {
                 return View("Detail", Evt);
             }
