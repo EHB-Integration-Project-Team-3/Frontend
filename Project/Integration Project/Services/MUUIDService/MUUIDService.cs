@@ -53,7 +53,7 @@ namespace Integration_Project.Services.MUUIDService {
                     using (MySqlCommand command = new MySqlCommand(sql, connection)) {
                         using (MySqlDataReader reader = command.ExecuteReader()) {
                             while (reader.Read()) {
-                                receivedModal.Uuid = new Guid((byte[])reader.GetValue(1));
+                                receivedModal.Uuid = new Guid((byte[]) reader.GetValue(1));
                                 receivedModal.Source_EntityId = (string) reader.GetValue(2);
                                 receivedModal.EntityType = (string) reader.GetValue(3);
                                 receivedModal.EntityVersion = (int) reader.GetValue(4);
@@ -67,6 +67,27 @@ namespace Integration_Project.Services.MUUIDService {
             } catch (Exception ex) {
                 Console.WriteLine("Error retrieving muuid, please check connection or service");
                 return null;
+            }
+        }
+
+        public bool UpdateEntityVersion(MUUIDSend sendModal, int currentEntityVersion) {
+            string constring = _config.GetConnectionString("MUUIDConnection");
+            string sql = $"update master set EntityVersion = {currentEntityVersion} " +
+                $"where Source = {sendModal.Source} and EntityVersion = {currentEntityVersion} - 1 and UUID = UUID_TO_BIN('{sendModal.Uuid}') and" +
+                $"(select EntityVersion from master where Source = Canvas) < {currentEntityVersion} and " +
+                $"(select EntityVersion from master where Source = PLANNING) < {currentEntityVersion};";
+            try {
+                using (MySqlConnection connection = new MySqlConnection(constring)) {
+                    connection.Open();
+                    using (MySqlCommand command = new MySqlCommand(sql, connection)) {
+                        command.ExecuteReader();
+                    }
+                    connection.Close();
+                    return true;
+                }
+            } catch (Exception ex) {
+                Console.WriteLine("Error updating model in muuid database");
+                return false;
             }
         }
 

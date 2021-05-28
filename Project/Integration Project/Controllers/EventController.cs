@@ -11,48 +11,41 @@ using Integration_Project.Services.MUUIDService.Interface;
 using Integration_Project.Models.Enums;
 using Integration_Project.Extensions;
 
-namespace Integration_Project.Controllers
-{
-    public class EventController : Controller
-    {
+namespace Integration_Project.Controllers {
+    public class EventController : Controller {
         private readonly IEventService _eventService;
         private readonly IMUUIDService _muuidService;
- 
-        public EventController(IEventService eventService, IMUUIDService muuidService)
-        {
+
+        public EventController(IEventService eventService, IMUUIDService muuidService) {
             _eventService = eventService;
             _muuidService = muuidService;
         }
 
-        public IActionResult Index()
-        {
+        public IActionResult Index() {
             return View();
         }
 
-        public IActionResult Overview()
-        {
+        public IActionResult Overview() {
             var Events = _eventService.GetAll();
             return View(Events);
         }
 
         //[UserPermission]
-        public IActionResult Detail(Event Evt)
-        {
+        public IActionResult Detail(Event Evt) {
             var user = HttpHelper.CheckLoggedUser();
             return View("Detail", new Tuple<Event, InternalUser>(Evt, user));
         }
 
-        public IActionResult Edit(int id)
-        {
+        public IActionResult Edit(int id) {
             var ev = _eventService.Get(id);
             return View(ev);
         }
 
 
         [HttpPost]
-        public IActionResult Update(Event ev){
+        public IActionResult Update(Event ev) {
             var eventMuid = _muuidService.Get(ev.Uuid);
-            if(ev.EntityVersion < eventMuid.EntityVersion) {
+            if (ev.EntityVersion < eventMuid.EntityVersion) {
                 // Hier moet er dan via de consumer een update worden binnen gehaald
             } else {
                 _eventService.Update(ev);
@@ -61,27 +54,27 @@ namespace Integration_Project.Controllers
         }
 
         //[UserPermission]
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
         public IActionResult Test() {
 
-            var x =  _muuidService.Get(Guid.Parse("3d597104-bfb1-11eb-b876-00155d110504"));
-            //_muuidService.InsertIntoMUUID(new Models.MUUID.Send.MUUIDSend {
-            //    EntityType = EntityType.Event,
-            //    Source = Source.FRONTEND,
-            //    Source_EntityId = 1,
-            //    Uuid = uuid
-            //});            
+            var x = _muuidService.Get(Guid.Parse("3d597104-bfb1-11eb-b876-00155d110504"));
+            _muuidService.UpdateEntityVersion(
+                new Models.MUUID.Send.MUUIDSend {
+                    EntityType = EntityType.Event,
+                    Source = Source.FRONTEND,
+                    Source_EntityId = x.Source_EntityId,
+                    Uuid = x.Uuid
+                }, 5);
+            ;
             return View();
         }
 
         [HttpPost]
         //[UserPermission]
-        public IActionResult CreateEvent(Event Ev)
-        {
+        public IActionResult CreateEvent(Event Ev) {
             var user = HttpHelper.CheckLoggedUser();
             // adding event to database
             Ev.Header = new Header();
