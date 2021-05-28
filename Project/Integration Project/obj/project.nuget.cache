@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "tLO9lHW2tHvEXhNaztfa/QjGR4NmxMsPG8euYiN4qwZoJY5FaK1CMzgFkbN8sF4UA6lomx8h1fHr9VDV6GgREg==",
+  "dgSpecHash": "w6seKET98qpFbsF3ulC7qQNhdtUpF0GjLsr9fNEY9BxBS7ybeP6u4xGDdZR980j1k3s7cGjiMp3ObvKAsVpPdA==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\michael.bracke\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
+    "C:\\Users\\michael.bracke\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.13\\microsoft.aspnetcore.cryptography.internal.3.1.13.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.13\\microsoft.aspnetcore.cryptography.keyderivation.3.1.13.nupkg.sha512",

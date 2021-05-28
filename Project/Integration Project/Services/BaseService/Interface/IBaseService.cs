@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Integration_Project.Services.EventService.Interface {
-    public interface IBaseService<T> {
+    public interface IBaseService<T> : IBaseService {
         public T Get(int Id);
         public List<T> GetAll();
         public List<T> GetAllForUser(Guid UserId);
@@ -13,4 +13,6 @@ namespace Integration_Project.Services.EventService.Interface {
         public bool Add(T t);
         public bool Update(T t);
     }
+
+    public interface IBaseService { }
 }
