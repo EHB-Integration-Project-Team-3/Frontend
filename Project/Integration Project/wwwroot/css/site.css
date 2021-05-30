@@ -54,3 +54,8 @@ html, body { height: 100%; margin: 0; font-family: Montserrat }
 .logo { max-width: 140px; }
 
 .profile { max-width: 70%; }
+
+
+/* maps */
+
+#map { width: 100%; height: 480px; }
