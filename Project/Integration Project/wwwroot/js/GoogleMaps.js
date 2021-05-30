@@ -5,7 +5,7 @@ function RetrieveMapsResponse(Street, Number, City, PostalCode) {
     url += (PostalCode + "+" + Street + "+" + Number + "+" + City + "&key=AIzaSyA_xd5aGMAAZ5E8ykJ3gyonm-s5XDgrBx4");
     $.get(url, function (data, status) {
         console.log(
-            data.find("geometry")
+            data["results"]
             );
     });
 }

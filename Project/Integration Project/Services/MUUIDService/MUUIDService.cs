@@ -14,14 +14,8 @@ using System.Threading.Tasks;
 namespace Integration_Project.Services.MUUIDService {
     public class MUUIDService : IMUUIDService {
 
-        private readonly IConfiguration _config;
-
-        public MUUIDService(IConfiguration config) {
-            _config = config;
-        }
-
+        private readonly string conString = "server=10.3.17.63;database=masteruuid;port=3306;user=muuid;password=muuid";
         public void InsertIntoMUUID(MUUIDSend sendModel) {
-            string constring = _config.GetConnectionString("MUUIDConnection");
             string sql =
                 $"INSERT INTO master ( UUID, Source_EntityId, EntityType, Source) VALUES(" +
                 $"UUID_TO_BIN('{sendModel.Uuid}')," +
@@ -29,7 +23,7 @@ namespace Integration_Project.Services.MUUIDService {
                 $"'{sendModel.EntityType}'," +
                 $"'{sendModel.Source}');";
             try {
-                using (MySqlConnection connection = new MySqlConnection(constring)) {
+                using (MySqlConnection connection = new MySqlConnection(conString)) {
                     connection.Open();
                     using (MySqlCommand command = new MySqlCommand(sql, connection)) {
                         using (MySqlDataReader reader = command.ExecuteReader()) {
@@ -44,11 +38,10 @@ namespace Integration_Project.Services.MUUIDService {
         }
 
         public MUUIDReceive Get(Guid uuid) {
-            string constring = _config.GetConnectionString("MUUIDConnection");
             string sql = $"SELECT * FROM master WHERE UUID = UUID_TO_BIN('{uuid}');";
             MUUIDReceive receivedModal = new MUUIDReceive();
             try {
-                using (MySqlConnection connection = new MySqlConnection(constring)) {
+                using (MySqlConnection connection = new MySqlConnection(conString)) {
                     connection.Open();
                     using (MySqlCommand command = new MySqlCommand(sql, connection)) {
                         using (MySqlDataReader reader = command.ExecuteReader()) {
@@ -71,13 +64,12 @@ namespace Integration_Project.Services.MUUIDService {
         }
 
         public bool UpdateEntityVersion(MUUIDSend sendModal, int currentEntityVersion) {
-            string constring = _config.GetConnectionString("MUUIDConnection");
             string sql = $"update master set EntityVersion = {currentEntityVersion} " +
                 $"where Source = '{sendModal.Source}' and EntityVersion = {currentEntityVersion} - 1 and UUID = UUID_TO_BIN('{sendModal.Uuid}') and " +
                 $"(select EntityVersion from master where Source = 'Canvas') < {currentEntityVersion} and " +
                 $"(select EntityVersion from master where Source = 'PLANNING') < {currentEntityVersion};";
             try {
-                using (MySqlConnection connection = new MySqlConnection(constring)) {
+                using (MySqlConnection connection = new MySqlConnection(conString)) {
                     connection.Open();
                     using (MySqlCommand command = new MySqlCommand(sql, connection)) {
                         command.ExecuteReader();
@@ -93,11 +85,10 @@ namespace Integration_Project.Services.MUUIDService {
 
         public Guid GetUUID() {
             /// TODO: Nog extra toevoegen dat backup conn.string ook wordt toegepast
-            string constring = _config.GetConnectionString("MUUIDConnection");
             string sql = "SELECT UUID()";
             string uuid = "";
             try {
-                using (MySqlConnection connection = new MySqlConnection(constring)) {
+                using (MySqlConnection connection = new MySqlConnection(conString)) {
                     connection.Open();
                     using (MySqlCommand command = new MySqlCommand(sql, connection)) {
                         using (MySqlDataReader reader = command.ExecuteReader()) {

@@ -36,6 +36,9 @@
             @Html.TextBoxFor(m => Model.Location.Number, "", new { @id = "inptNumber", @type = "number", @class = "form-control" })
         </div>
         <div class="form-group">
+            <div id="map"></div>
+        </div>
+        <div class="form-group">
             @Html.EditorFor(model => model.Start, new { htmlAttributes = new { @Value = DateTime.Now, @class = "form-control datepicker" } })
             @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
         </div>
@@ -51,3 +54,4 @@
     }
 
 </div>
+
