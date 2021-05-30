@@ -8,47 +8,78 @@
 </div>
 <div class="row d-flex justify-content-center">
     <!-- list item image picker -->
-    @using (Html.BeginForm("CreateEvent", "Event", null, FormMethod.Post, null, new { @class = "col-8 mt-4" })) {
+    @using (Html.BeginForm("CreateEvent", "Event", null, FormMethod.Post, null, new { @class = "col-10 mt-4" })) {
         @Html.AntiForgeryToken();
-        <div class="form-group">
-            @Html.LabelFor(m => Model.Title)
-            @Html.TextBoxFor(m => Model.Title, "", new { @class = "form-control" })
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Title)
+                    @Html.TextBoxFor(m => Model.Title, "", new { @class = "form-control" })
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            @Html.LabelFor(m => Model.Description)
-            @Html.TextAreaFor(m => Model.Description, new { @class = "form-control" })
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Description)
+                    @Html.TextAreaFor(m => Model.Description, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7">
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Location.City)
+                    @Html.TextBoxFor(m => Model.Location.City, "", new { @id = "inptCity", @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Location.PostalCode)
+                    @Html.TextBoxFor(m => Model.Location.PostalCode, "", new { @id = "inptPostalCode", @type = "number", @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Location.StreetName)
+                    @Html.TextBoxFor(m => Model.Location.StreetName, "", new { @id = "inptStreet", @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Location.Number)
+                    @Html.TextBoxFor(m => Model.Location.Number, "", new { @id = "inptNumber", @type = "number", @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group">
+                    <div id="map"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    @Html.EditorFor(model => model.Start, new { htmlAttributes = new { @Value = DateTime.Now, @class = "form-control datepicker" } })
+                    @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    @Html.EditorFor(model => model.End, new { htmlAttributes = new { @Value = DateTime.Now, @class = "form-control datepicker" } })
+                    @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => Model.Location.City)
-            @Html.TextBoxFor(m => Model.Location.City, "", new { @id = "inptCity", @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => Model.Location.PostalCode)
-            @Html.TextBoxFor(m => Model.Location.PostalCode, "", new { @id = "inptPostalCode", @type = "number", @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => Model.Location.StreetName)
-            @Html.TextBoxFor(m => Model.Location.StreetName, "", new { @id = "inptStreet", @class = "form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => Model.Location.Number)
-            @Html.TextBoxFor(m => Model.Location.Number, "", new { @id = "inptNumber", @type = "number", @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <div id="map"></div>
-        </div>
-        <div class="form-group">
-            @Html.EditorFor(model => model.Start, new { htmlAttributes = new { @Value = DateTime.Now, @class = "form-control datepicker" } })
-            @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group">
-            @Html.EditorFor(model => model.End, new { htmlAttributes = new { @Value = DateTime.Now, @class = "form-control datepicker" } })
-            @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
-        </div>
+
+
+
+
+
+
+
         <div class="form-group">
             <a id="GenMapsResponse" class="btn btn-outline-secondary">GENERATE MAPS RESPONSE</a>
         </div>
+
         <button class="btn btn-outline-secondary">Toevoegen</button>
 
     }

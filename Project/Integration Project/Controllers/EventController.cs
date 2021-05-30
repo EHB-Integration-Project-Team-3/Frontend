@@ -58,23 +58,12 @@ namespace Integration_Project.Controllers {
             return View();
         }
 
-        public IActionResult Test() {
-
-            var x = _muuidService.Get(Guid.Parse("3d597104-bfb1-11eb-b876-00155d110504"));
-            _muuidService.UpdateEntityVersion(
-                new Models.MUUID.Send.MUUIDSend {
-                    EntityType = EntityType.Event,
-                    Source = Source.FRONTEND,
-                    Source_EntityId = x.Source_EntityId,
-                    Uuid = x.Uuid
-                }, 5);
-            ;
-            return View();
-        }
-
         [HttpPost]
         //[UserPermission]
         public IActionResult CreateEvent(Event Ev) {
+            if (!ModelState.IsValid) {
+                return Create();
+            }
             var user = HttpHelper.CheckLoggedUser();
             // adding event to database
             Ev.Header = new Header();
