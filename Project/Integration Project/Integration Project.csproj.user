@@ -22,4 +22,18 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <ItemGroup>
+    <None Update="RabbitMQ\XSD\Attendance.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="RabbitMQ\XSD\Event.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="RabbitMQ\XSD\Heartbeat.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="RabbitMQ\XSD\InternalUser.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
 </Project>

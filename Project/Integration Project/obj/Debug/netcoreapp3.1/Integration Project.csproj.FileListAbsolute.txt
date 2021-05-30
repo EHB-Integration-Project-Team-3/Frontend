@@ -1307,3 +1307,8 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Detail.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
+D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\libman.json
+D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\Autofac.dll
+D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Detail.cshtml.g.cs

@@ -830,7 +830,6 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
-D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
@@ -839,3 +838,7 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Autofac.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\libman.json
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Autofac.dll
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
