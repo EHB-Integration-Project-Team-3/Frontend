@@ -16,8 +16,6 @@ namespace RabbitMQ_Receiver
 {
     public class Program
     {
-        private static readonly IMUUIDService _muuidService;
-
         public static void Main(string[] args)
         {
             //Heartbeat
@@ -75,7 +73,7 @@ namespace RabbitMQ_Receiver
                             }
                             else if (receivedEvent.Header.Method == Method.UPDATE)
                             {
-                                if (receivedEvent.EntityVersion > _muuidService.Get(receivedEvent.Uuid).EntityVersion)
+                                if (receivedEvent.EntityVersion > new MUUIDService().Get(receivedEvent.Uuid).EntityVersion)
                                     if (new EventService().Update(receivedEvent))
                                         Console.WriteLine($"\nEvent successfully updated in database");
                                     else
@@ -119,7 +117,7 @@ namespace RabbitMQ_Receiver
                             }
                             else if (receivedUser.Header.Method == Method.UPDATE)
                             {
-                                if (receivedUser.EntityVersion > _muuidService.Get(receivedUser.Uuid).EntityVersion)
+                                if (receivedUser.EntityVersion > new MUUIDService().Get(receivedUser.Uuid).EntityVersion)
                                     if (new UserService().Update(receivedUser))
                                         Console.WriteLine($"\nUser successfully updated in database");
                                     else
