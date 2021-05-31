@@ -48,6 +48,7 @@ html, body { height: 100%; margin: 0; font-family: Montserrat }
 .aeu-signature { font-family: "Quicksand"; }
     .aeu-signature > img { height: 30px; }
 
+.form-group > label { font-weight: 900; }
 
 /*Images*/
 

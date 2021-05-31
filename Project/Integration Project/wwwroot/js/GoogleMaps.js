@@ -14,7 +14,7 @@ function RetrieveMapsResponse(Street, Number, City, PostalCode) {
     });
 }
 
-$("#GenMapsResponse").click(function () {
+$(".inptMaps").keyup(function () {
     RetrieveMapsResponse(
         $("#inptStreet").val(),
         $("#inptNumber").val(),
