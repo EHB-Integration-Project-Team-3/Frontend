@@ -58,7 +58,14 @@ namespace Integration_Project.Controllers
             }
             else
             {
-                _eventService.Update(ev);
+                ev.Header = new Header
+                {
+                    Method = Method.UPDATE
+                };
+                ev.EntityVersion += 1;
+                Rabbit.Send<Event>(ev, Constants.EventX);
+
+                //_eventService.Update(ev); naar de receiver verplaatst
             }
             return RedirectToAction("Edit", "Event");
         }
@@ -89,13 +96,19 @@ namespace Integration_Project.Controllers
         public IActionResult CreateEvent(Event Ev)
         {
             var user = HttpHelper.CheckLoggedUser();
-            // adding event to database
-            Ev.Header = new Header();
-            Ev.Header.Method = Method.CREATE;
+
+            Ev.Header = new Header
+            {
+                Method = Method.CREATE
+            };
             // ask new uuid to the masterUUID;
             Ev.Uuid = _muuidService.GetUUID();
             Ev.OrganiserId = user != null ? user.Uuid : new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1"); //uuid van ingelogde user
             Ev.LocationRabbit = Ev.Location.ToString();
+
+            // set on rabbit que to other platforms
+            Rabbit.Send<Event>(Ev, Constants.EventX);
+
             // create new row in MUUID
             _muuidService.InsertIntoMUUID(new Models.MUUID.Send.MUUIDSend
             {
@@ -104,8 +117,7 @@ namespace Integration_Project.Controllers
                 Source_EntityId = Ev.Id.ToString(),
                 Uuid = Ev.Uuid
             });
-            // set on rabbit que to other platforms
-            Rabbit.Send<Event>(Ev, Constants.EventX);
+
             return RedirectToAction("Overview", "Event");
         }
     }
