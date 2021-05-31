@@ -14,6 +14,7 @@ namespace Integration_Project.Models {
         public Header Header { get; set; }
 
         [Key]
+        [XmlIgnore]
         public int Id { get; set; }
 
         [XmlElement("uuid")]
@@ -53,6 +54,12 @@ namespace Integration_Project.Models {
         [Required(ErrorMessage = "Locatie is vereist.")]
 
         public Location Location { get; set; }
+
+        [XmlIgnore]
+        public decimal Lat { get; set; }
+
+        [XmlIgnore]
+        public decimal Long { get; set; }
 
         [XmlElement("location")]
         public string LocationRabbit { get; set; }

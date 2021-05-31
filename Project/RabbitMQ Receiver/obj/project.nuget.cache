@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2AF7fqaJP169R6Olw8Or3mKlc4qx2hEZntBubqcRhqlAt+PUXyW1KVO5V9IslwADZT4cIq2lGGD5s71tsHo4cQ==",
+  "dgSpecHash": "GaOwgoMvUABeuAM2jY8x+Mbl5IciWQYUHQyhO5hT0LT945S3noPsghnusPJhowrzMmWi9h5fcbtA9ptGbR8kCg==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
   "expectedPackageFiles": [
@@ -67,6 +67,7 @@
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.5\\microsoft.visualstudio.web.codegenerators.mvc.3.1.5.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\michael.bracke\\.nuget\\packages\\mlkpwgen\\0.3.0\\mlkpwgen.0.3.0.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\mysqlconnector\\0.61.0\\mysqlconnector.0.61.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",

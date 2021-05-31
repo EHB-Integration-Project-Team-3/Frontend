@@ -11,6 +11,7 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreap
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\logo_horz.PNG
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\logo_vert.PNG
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\placeholder.jpg
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\js\GoogleMaps.js
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\js\site.js
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -106,6 +107,7 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreap
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\MlkPwgen.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\MySqlConnector.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.Bson.dll

@@ -1,58 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
+@using Integration_Project.Extensions
+
 @{
+    var user = HttpHelper.CheckLoggedUser();
 }
 
-@model Tuple<Event, InternalUser>
+@model Event
 
 
-@if (Model.Item2 != null && Model.Item1.OrganiserId == Model.Item2.Uuid)
-{
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <form>
-                <div class="form-group">
-                    <label for="title">Naam:</label><br>
-                    <input type="text" id="title" name="title" value=@Model.Item1.Title><br>
-                </div>
-                <div class="form-group">
-                    <label for="description">Beschrijving:</label><br>
-                    <input type="text" id="description" name="description" value=@Model.Item1.Description><br>
-                </div>
-                <div class="form-group">
-                    <label for="start">Begin:</label><br>
-                    <input type="date" id="start" name="start" value=@Model.Item1.Start><br>
-                </div>
-                <div class="form-group">
-                    <label for="end">Einde:</label><br>
-                    <input type="date" id="end" name="end" value=@Model.Item1.End><br>
-                </div>
-                <input type="submit" value="opslaan" id="submit">
-            </form>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="form-group">
+            <label for="title">Naam:</label><br>
+            <input type="text" id="title" name="title" value=@Model.Title><br>
         </div>
-    </div>
-}
-else
-{
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div>
-                <label>Naam:</label><br>
-                <label>@Model.Item1.Title</label><br>
-            </div>
-            <div>
-                <label>Beschrijving:</label><br>
-                <label>@Model.Item1.Description</label><br>
-            </div>
-            <div>
-                <label>Begin:</label><br>
-                <label>@Model.Item1.Start</label><br>
-            </div>
-            <div>
-                <label for="end">Einde:</label><br>
-                <label>@Model.Item1.End</label><br>
-            </div>
+        <div class="form-group">
+            <label for="description">Beschrijving:</label><br>
+            <input type="text" id="description" name="description" value=@Model.Description><br>
         </div>
+        <div class="form-group">
+            <label for="start">Begin:</label><br>
+            <input type="date" id="start" name="start" value=@Model.Start><br>
+        </div>
+        <div class="form-group">
+            <label for="end">Einde:</label><br>
+            <input type="date" id="end" name="end" value=@Model.End><br>
+        </div>
+        @if (Model.OrganiserId == (user != null ? user.Uuid : Guid.NewGuid())) {
+        @if (user.Uuid == Model.OrganiserId) {
+                <a href="@Url.Action("Edit", "Event", new { @Id = Model.Id } )"><i class="fa fa-edit"></i></a>
+            }
+        }
     </div>
-}
+</div>
+

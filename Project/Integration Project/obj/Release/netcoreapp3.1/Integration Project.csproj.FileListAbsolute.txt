@@ -1818,3 +1818,5 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreap
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Event\Detail.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Shared\Components\Auth\Default.cshtml.g.cs
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Shared\Components\Auth\_LoginPartial.cshtml.g.cs
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\bin\Release\netcoreapp3.1\MlkPwgen.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\Razor\Views\Shared\Event\_EventOverview.cshtml.g.cs

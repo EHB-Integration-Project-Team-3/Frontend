@@ -40,6 +40,10 @@ namespace Integration_Project.Models {
             return $"{StreetName}%{Number}%{Bus}%{City}%{PostalCode}";
         }
 
+        public string ToStringForGoogleMaps() {
+            return $"{StreetName} {Number} {Bus} {City} {PostalCode}";
+        }
+
         public static Location FromRabbitMQ(string locationString) {
             try {
                 var locationArray = locationString.Split("%");

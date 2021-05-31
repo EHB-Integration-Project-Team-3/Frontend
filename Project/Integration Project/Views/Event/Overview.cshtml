@@ -1,39 +1,15 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
-@using Integration_Project.Extensions
-@{ var user = HttpHelper.CheckLoggedUser(); }
+﻿
 @model List<Event>
 
+
 <div class="row card-title d-flex justify-content-center">
-    <h2 class="p-3 rounded bg-light">Events</h2>
+    <h2 class="p-3 mt-3 rounded bg-dark text-white animate__animated animate__bounceInLeft">Events</h2>
 </div>
-<div class="row d-flex justify-content-center">
-    <table class="table table-bordered table-hover col-9">
-        <tr>
-            <th>Event </th>
-            <th>Beschrijving</th>
-            <th>Locatie </th>
-            <th>Start datum</th>
-            <th>Eind Datum</th>
-            @if (Model.Any(p => p.OrganiserId == (user != null ? user.Uuid : Guid.NewGuid()))) {
-                <th>Bewerken</th>
-            }
-        </tr>
-        @foreach (var ev in Model) {
-            <tr>
-                <td>@ev.Title</td>
-                <td>@ev.Description</td>
-                <td>@ev.Location.City</td>
-                <td>@ev.Start</td>
-                <td>@ev.End</td>
-                @if (Model.Any(p => p.OrganiserId == (user != null ? user.Uuid : Guid.NewGuid()))) {
-                    @if (user.Uuid == ev.OrganiserId) {
-                        <td><a href="@Url.Action("Edit", "Event", new { @Id = ev.Id } )"><i class="fa fa-edit"></i></a></td>
-                    }
-                }
-            </tr>
+<div class="row d-flex justify-content-end">
+    @{ if (Integration_Project.Extensions.HttpHelper.CheckLoggedUser() != null) {
+            <button class="btn btn-dark float-right" onclick="location.href='@Url.Action("Create", "Event")'"><i class="fas fa-plus mx-1"></i>Event Toevoegen</button>
         }
-    </table>
+    }
 </div>
+
+@Html.Partial("Event/_EventOverview", Model)

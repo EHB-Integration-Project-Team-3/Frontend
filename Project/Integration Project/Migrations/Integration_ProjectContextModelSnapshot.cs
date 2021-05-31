@@ -27,6 +27,7 @@ namespace Integration_Project.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("End")
@@ -35,11 +36,17 @@ namespace Integration_Project.Migrations
                     b.Property<int>("EntityVersion")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Lat")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("LocationRabbit")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("LocationUuid")
+                    b.Property<Guid>("LocationUuid")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Long")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("OrganiserId")
                         .HasColumnType("uniqueidentifier");
@@ -48,6 +55,7 @@ namespace Integration_Project.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("Uuid")
@@ -96,15 +104,19 @@ namespace Integration_Project.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Number")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PostalCode")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StreetName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Uuid");
@@ -116,7 +128,9 @@ namespace Integration_Project.Migrations
                 {
                     b.HasOne("Integration_Project.Models.Location", "Location")
                         .WithMany()
-                        .HasForeignKey("LocationUuid");
+                        .HasForeignKey("LocationUuid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

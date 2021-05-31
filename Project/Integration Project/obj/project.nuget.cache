@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w6seKET98qpFbsF3ulC7qQNhdtUpF0GjLsr9fNEY9BxBS7ybeP6u4xGDdZR980j1k3s7cGjiMp3ObvKAsVpPdA==",
+  "dgSpecHash": "v4EKxT0a+uaHhIp/t1NaH43cQ/qh8TPRtS1GvsCXtO1bd8tr5ckgFK0TU8XuoFKGqmeQg8jnOcB0t6JnuxRCxw==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj",
   "expectedPackageFiles": [
@@ -69,6 +69,7 @@
     "C:\\Users\\michael.bracke\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.5\\microsoft.visualstudio.web.codegenerators.mvc.3.1.5.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\michael.bracke\\.nuget\\packages\\mlkpwgen\\0.3.0\\mlkpwgen.0.3.0.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\mysqlconnector\\0.61.0\\mysqlconnector.0.61.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\michael.bracke\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",

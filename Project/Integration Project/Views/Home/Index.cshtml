@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model Integration_Project.Controllers.HomeViewModel
 
 <div class="container-fluid">
     <div class="row">
@@ -24,11 +25,12 @@
             </a>
         </div>
     </div>
-    <div class="row d-flex justify-content-center my-5">
-        <button class="btn btn-outline-secondary mx-2" onclick="location.href='@Url.Action("Overview", "Event")'"><h1 class="display-4"><img src="~/images/Events/party.png" />Events</h1></button>
+    <div class="row d-flex justify-content-end mt-5">
+        <button class="btn btn-dark float-right mx-2" onclick="location.href='@Url.Action("Overview", "Event")'"><i class="fas fa-sign-in-alt mx-1"></i>Overzicht</button>
         @{ if (Integration_Project.Extensions.HttpHelper.CheckLoggedUser() != null) {
-                <button class="btn btn-outline-secondary mx-2" onclick="location.href='@Url.Action("Create", "Event")'"><h1 class="display-4">Event Toevoegen</h1></button>
+                <button class="btn btn-dark float-right" onclick="location.href='@Url.Action("Create", "Event")'"><i class="fas fa-plus mx-1"></i>Event Toevoegen</button>
             }
         }
     </div>
+    @Html.Partial("Event/_EventOverview", Model.Events)
 </div>

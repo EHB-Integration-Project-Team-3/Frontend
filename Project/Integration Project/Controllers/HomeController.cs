@@ -1,4 +1,5 @@
 ﻿using Integration_Project.Models;
+using Integration_Project.Services.EventService.Interface;
 using Integration_Project.Services.MUUIDService.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -9,18 +10,23 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Integration_Project.Controllers {
+
+    public class HomeViewModel {
+        public List<Event> Events { get; set; }
+    }
     public class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
         private readonly IMUUIDService _muuidService;
-
-        public HomeController(ILogger<HomeController> logger, IMUUIDService muuidService) {
+        private readonly IEventService _eventService;
+        public HomeController(ILogger<HomeController> logger, IMUUIDService muuidService, IEventService eventService) {
             _logger = logger;
             _muuidService = muuidService;
+            _eventService = eventService;
         }
 
         public IActionResult Index() {
-            var uuidFromMasterUUID = _muuidService.GetUUID();
-            return View();
+            var model = new HomeViewModel { Events = _eventService.GetAll() };
+            return View(model);
         }
 
         public IActionResult Privacy() {
