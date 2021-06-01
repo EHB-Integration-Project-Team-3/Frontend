@@ -8,8 +8,14 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreap
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\Events\party.png
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\Events\Planner_Gif.txt
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\Events\T0WC.gif
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\banner.png
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\logo only tall.png
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\logo-naam copy.png
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\logo-tall.png
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\logo.png
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\logo_horz.PNG
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\logo_vert.PNG
+C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\logo\naam.png
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\placeholder.jpg
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\js\GoogleMaps.js
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\js\site.js
