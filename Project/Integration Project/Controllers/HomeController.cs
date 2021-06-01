@@ -18,14 +18,21 @@ namespace Integration_Project.Controllers {
         private readonly ILogger<HomeController> _logger;
         private readonly IMUUIDService _muuidService;
         private readonly IEventService _eventService;
-        public HomeController(ILogger<HomeController> logger, IMUUIDService muuidService, IEventService eventService) {
+        private readonly IAttendanceService _attendanceService;
+        public HomeController(ILogger<HomeController> logger, IMUUIDService muuidService, IEventService eventService, IAttendanceService attendanceService) {
             _logger = logger;
             _muuidService = muuidService;
             _eventService = eventService;
+            _attendanceService = attendanceService;
         }
 
         public IActionResult Index() {
-            var model = new HomeViewModel { Events = _eventService.GetAll() };
+            var model = new HomeViewModel {
+                Events = _eventService.GetAll() 
+            };
+            foreach(var ev in model.Events) {
+                ev.Attendees = _attendanceService.GetAllForEvent(ev.Uuid);
+            }
             return View(model);
         }
 

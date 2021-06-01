@@ -70,4 +70,6 @@ html, body { height: 100%; margin: 0; font-family: Montserrat }
 .ev-tit-desc p {font-size:15px; font-weight:600}
 
 .carousel-item {height:400px}
-
+.event-overview-detail-wrapper .right-side i { font-size: 35px; color: darkgrey; }
+    .event-overview-detail-wrapper .right-side i:hover { color: #80006e }
+.fa-map-marker-alt {color: darkred;}

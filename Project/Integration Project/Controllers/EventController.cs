@@ -15,10 +15,12 @@ namespace Integration_Project.Controllers {
     public class EventController : Controller {
         private readonly IEventService _eventService;
         private readonly IMUUIDService _muuidService;
+        private readonly IAttendanceService _attendanceService;
 
-        public EventController(IEventService eventService, IMUUIDService muuidService) {
+        public EventController(IEventService eventService, IMUUIDService muuidService, IAttendanceService attendanceService) {
             _eventService = eventService;
             _muuidService = muuidService;
+            _attendanceService = attendanceService;
         }
 
         public IActionResult Index() {
@@ -27,12 +29,29 @@ namespace Integration_Project.Controllers {
 
         public IActionResult Overview() {
             var Events = _eventService.GetAll();
+            foreach (var ev in Events) {
+                ev.Attendees = _attendanceService.GetAllForEvent(ev.Uuid);
+            }
             return View(Events == null ? new List<Event>() : Events);
         }
 
-        //[UserPermission]
+        public IActionResult SubscribeToEvent(Guid eventId) {
+            var attendance = new Attendance {
+                EventId = eventId,
+                UserId = HttpHelper.CheckLoggedUser().Uuid,
+            };
+            if (_attendanceService.Add(attendance)) {
+                Rabbit.Send<Attendance>(attendance, Constants.AttendanceX);
+                return Redirect(HttpContext.Request.Headers["Referer"]);
+            }
+                // failed to save attendace
+                return View();
+        }
+
+
         public IActionResult Detail(int Id) {
             var ev = _eventService.Get(Id);
+
             return View("Detail", ev);
         }
 
@@ -104,8 +123,7 @@ namespace Integration_Project.Controllers {
 
             var att = new Attendance();
 
-            att.Header = new Header
-            {
+            att.Header = new Header {
                 Method = Method.CREATE
             };
 
@@ -117,8 +135,7 @@ namespace Integration_Project.Controllers {
             Rabbit.Send<Attendance>(att, Constants.AttendanceX);
 
             // create new row in MUUID
-            _muuidService.InsertIntoMUUID(new Models.MUUID.Send.MUUIDSend
-            {
+            _muuidService.InsertIntoMUUID(new Models.MUUID.Send.MUUIDSend {
                 EntityType = EntityType.Attendance,
                 Source = Source.FRONTEND,
                 Source_EntityId = att.Uuid.ToString(),

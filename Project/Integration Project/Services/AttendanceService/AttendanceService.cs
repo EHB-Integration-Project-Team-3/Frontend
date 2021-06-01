@@ -62,6 +62,23 @@ namespace Integration_Project.Services.AttendanceService
             }
         }
 
+        public List<Attendance> GetAllForEvent(Guid EventId) {
+            using (var context = new Integration_ProjectContext())
+            {
+                try
+                {
+                    return context.Attendances
+                        .Where(a => a.EventId == EventId)
+                        .ToList();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    return null;
+                }
+            }
+        }
+
         public List<Attendance> GetAll()
         {
             using (var context = new Integration_ProjectContext())

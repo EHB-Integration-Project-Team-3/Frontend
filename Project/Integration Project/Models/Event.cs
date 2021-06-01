@@ -63,5 +63,13 @@ namespace Integration_Project.Models {
 
         [XmlElement("location")]
         public string LocationRabbit { get; set; }
+
+
+        /// <summary>
+        /// Lijst van inschreven personen, dienen deze ook via xml door te sturen? Of hoe wordt dit gedaan?
+        /// </summary>
+
+        [XmlIgnore]
+        public List<Attendance> Attendees { get; set; }
     }
 }

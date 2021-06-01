@@ -5,6 +5,7 @@ using Integration_Project;
 using Integration_Project.Areas.Identity.Data;
 using Integration_Project.Models;
 using Integration_Project.Services;
+using Integration_Project.Services.AttendanceService;
 using Integration_Project.Services.EventService;
 using Integration_Project.Services.EventService.Interface;
 using Integration_Project.Services.MUUIDService;
@@ -44,7 +45,7 @@ namespace Integration_Project {
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<IMUUIDService, MUUIDService>();
             services.AddScoped<IUserService, UserService>();
-
+            services.AddScoped<IAttendanceService, AttendanceService>();
 
             // eigen DBcontext service voor connectie naar eigen database
             services.AddDbContext<Integration_ProjectContext>(options =>

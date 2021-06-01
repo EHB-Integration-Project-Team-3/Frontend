@@ -4,14 +4,16 @@ using Integration_Project.Areas.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Integration_Project.Migrations
 {
     [DbContext(typeof(Integration_ProjectContext))]
-    partial class Integration_ProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20210601153315_UpdateAttendace")]
+    partial class UpdateAttendace
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -148,7 +150,7 @@ namespace Integration_Project.Migrations
 
             modelBuilder.Entity("Integration_Project.Models.Attendance", b =>
                 {
-                    b.HasOne("Integration_Project.Models.Event", null)
+                    b.HasOne("Integration_Project.Models.Event", "Event")
                         .WithMany("Attendees")
                         .HasForeignKey("EventId1");
                 });

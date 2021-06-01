@@ -8,5 +8,6 @@ namespace Integration_Project.Services.EventService.Interface {
     public interface IAttendanceService : IBaseService<Attendance> {
         public bool Delete(Guid Uuid);
         public Attendance Get(Guid Id);
+        public List<Attendance> GetAllForEvent(Guid EventId);
     }
 }

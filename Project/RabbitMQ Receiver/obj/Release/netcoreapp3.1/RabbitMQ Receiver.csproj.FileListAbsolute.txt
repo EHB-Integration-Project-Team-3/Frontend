@@ -826,3 +826,12 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\obj\Release\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\obj\Release\netcoreapp3.1\RabbitMQ Receiver.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\obj\Release\netcoreapp3.1\RabbitMQ Receiver.pdb
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\obj\Release\netcoreapp3.1\RabbitMQ Receiver.genruntimeconfig.cache
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\libman.json
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\Autofac.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\MlkPwgen.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\MySqlConnector.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\bin\Release\netcoreapp3.1\Pomelo.JsonObject.dll

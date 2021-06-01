@@ -5,11 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Integration_Project.Models
-{
+namespace Integration_Project.Models {
     [XmlRoot(ElementName = "attendance")]
-    public class Attendance
-    {
+    public class Attendance {
         [XmlElement("header")]
         public Header Header { get; set; }
 
