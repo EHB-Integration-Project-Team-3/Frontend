@@ -99,6 +99,32 @@ namespace Integration_Project.Controllers {
                 Uuid = Ev.Uuid
             });
 
+
+            //Add LoggedUser to Event Attendance
+
+            var att = new Attendance();
+
+            att.Header = new Header
+            {
+                Method = Method.CREATE
+            };
+
+            // ask new uuid to the masterUUID;
+            att.Uuid = _muuidService.GetUUID();
+            att.UserId = Ev.OrganiserId;  //user != null ? user.Uuid : new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1"); //uuid van ingelogde user
+            att.EventId = Ev.Uuid;
+            // set on rabbit que to other platforms
+            Rabbit.Send<Attendance>(att, Constants.AttendanceX);
+
+            // create new row in MUUID
+            _muuidService.InsertIntoMUUID(new Models.MUUID.Send.MUUIDSend
+            {
+                EntityType = EntityType.Attendance,
+                Source = Source.FRONTEND,
+                Source_EntityId = att.Uuid.ToString(),
+                Uuid = att.Uuid
+            });
+
             return RedirectToAction("Overview", "Event");
         }
     }
