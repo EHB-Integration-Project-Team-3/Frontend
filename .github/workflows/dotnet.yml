@@ -59,9 +59,10 @@ jobs:
     - name: 📂 Sync files to ftp
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: 10.3.17.65:21
+        server: 10.3.17.65
         username: administrator
         password: poi987POI
+        port: 21
     
     
         
