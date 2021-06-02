@@ -48,25 +48,17 @@ jobs:
       with:
         name: .net-app
         
-    - name: Connect VPN
-      uses: golfzaptw/action-connect-ovpn@master
-      with:
-          PING_URL: 'dtsslvpn.ehb.be'
-          FILE_OVPN: '.github/vpn/config.ovpn'
-          SECRET: ${{ secrets.SECRET_USERNAME_PASSWORD }}
-          TLS_KEY: ${{ secrets.TLS_KEY }}
-      env:
-          CA_CRT: ${{ secrets.CA_CRT}}
-          USER_CRT: ${{ secrets.USER_CRT }}
-          USER_KEY: ${{ secrets.USER_KEY }}
+    - run: | 
+       rasdial "dtsslvpn.ehb.be" "michael.bracke@student.ehb.be" "Rsg9y2Hpp"
+      shell: cmd
 
 
     - name: 📂 Sync files to ftp
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: 10.3.17.65:21
-        username: myFtpUserName
-        password: ${{ secrets.ftp_password }}
+        username: administrator
+        password: poi987POI
     
     
         
