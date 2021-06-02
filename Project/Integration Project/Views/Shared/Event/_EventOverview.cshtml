@@ -13,48 +13,51 @@
 @model List<Event>
 
 
-
-
 @foreach (var ev in Model) {
 
     str = PasswordGenerator.Generate(length: 4, allowed: Sets.Alphanumerics);
-    <div class="row event-overview-detail-wrapper my-3 rounded" onload="loadEmbeddedMap()" onclick="window.location.href='@Url.Action("Detail", "Event", new { @Id = ev.Id } )'">
+    <div class="row event-overview-detail-wrapper my-3 rounded" onload="loadEmbeddedMap()">
         <input type="hidden" class="uniqueEnum" value="@str" />
         <input type="hidden" id="queryLocation" value="@ev.Location.ToStringForGoogleMaps()" />
 
         <div class="col-md-2 text-center bg-custom text-white date-info">
-            <p> @ev.Start.Day </p>
-            <p> @ev.Start.ToString("MMM") </p>
-            <p> @ev.Start.Year </p>
-            <span>
-                <i class="fas fa-clock"></i>
-                @ev.Start.ToString("MMM") @ev.Start.Day - @ev.End.ToString("MMM") @ev.End.Day
-            </span>
+            <a href="@Url.Action("Detail", "Event", new { @Id = ev.Id })">
+                <p> @ev.Start.Day </p>
+                <p> @ev.Start.ToString("MMM") </p>
+                <p> @ev.Start.Year </p>
+                <span>
+                    <i class="fas fa-clock"></i>
+                    @ev.Start.ToString("MMM") @ev.Start.Day - @ev.End.ToString("MMM") @ev.End.Day
+                </span>
+            </a>
         </div>
         <div class="col-md-3 p-0">
             <div class="localMap" id="map-@str"></div>
         </div>
         <div class="col-md-5 bg-white ev-tit-desc pt-4">
-            <h2>@ev.Title</h2>
-            <p>@ev.Description</p>
+            <a href="@Url.Action("Detail", "Event", new { @Id = ev.Id })">
+                <h2>@ev.Title</h2>
+                <p>@ev.Description</p>
+            </a>
         </div>
         <div class="col-md-2 text-center pt-4 right-side">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>@ev.Location.City</p>
-            @if (Model.Any(p => p.OrganiserId == (user != null ? user.Uuid : Guid.NewGuid()))) {
-                @if (user.Uuid == ev.OrganiserId) {
-                    <a href="@Url.Action("Edit", "Event", new { @Id = ev.Id } )"><i class="fa fa-edit"></i></a>
+            <a href="@Url.Action("Detail", "Event", new { @Id = ev.Id })">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>@ev.Location.City</p>
+                @if (Model.Any(p => p.OrganiserId == (user != null ? user.Uuid : Guid.NewGuid()))) {
+                    @if (user.Uuid == ev.OrganiserId) {
+                        <a href="@Url.Action("Edit", "Event", new { @Id = ev.Id } )"><i class="fa fa-edit"></i></a>
+                    }
                 }
-            }
-            @if (user != null) {
-                @if (ev.Attendees.Any(p => p.UserId == user.Uuid)) {
-                    <i class="fas fa-check"></i>
-                } else {
-                    <a href="@Url.Action("SubscribeToEvent", "Event", new { @eventId = ev.Uuid } )"><i class="fas fa-user-plus"></i></a>
+                @if (user != null) {
+                    @if (ev.Attendees.Any(p => p.UserId == user.Uuid)) {
+                        <i class="fas fa-check"></i>
+                    } else {
+                        <a href="@Url.Action("SubscribeToEvent", "Event", new { @eventId = ev.Uuid } )"><i class="fas fa-user-plus"></i></a>
 
-                };
-            }
-
+                    };
+                }
+            </a>
         </div>
     </div>
 }

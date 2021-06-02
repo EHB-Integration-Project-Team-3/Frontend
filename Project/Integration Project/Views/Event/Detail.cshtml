@@ -1,36 +1,94 @@
 ﻿
 @using Integration_Project.Extensions
+@using MlkPwgen;
+@using Integration_Project.ViewModels;
 
 @{
     var user = HttpHelper.CheckLoggedUser();
+    var str = PasswordGenerator.Generate(length: 4, allowed: Sets.Alphanumerics);
+    var organisers = Model.Users.Where(u => u.Uuid == @Model.Event.OrganiserId);
 }
 
-@model Event
+@model EventdetailViewModel
 
 
 <div class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="form-group">
-            <label for="title">Naam:</label><br>
-            <input type="text" id="title" name="title" value=@Model.Title><br>
+    <div class="row d-flex justify-content-center col-12">
+        @*TITLE + DESCRIPTION*@
+        <label class="col-12" style="text-align: center"><h1>@Model.Event.Title</h1></label>
+        <label class="col-12" style="text-align: center">@Model.Event.Description</label>
+    </div>
+    <div class="col-12">
+        @*COUNTDOWN*@
+
+    </div>
+    <div class="row d-flex justify-content-center col-12">
+        @*MAP*@
+        <div class="col-4">
+            <div class="row event-overview-detail-wrapper my-3 rounded" onload="loadEmbeddedMap()">
+                <input type="hidden" class="uniqueEnum" value="@str" />
+                <input type="hidden" id="queryLocation" value="@Model.Event.Location.ToStringForGoogleMaps()" />
+                <div class="localMap" id="map-@str"></div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="description">Beschrijving:</label><br>
-            <input type="text" id="description" name="description" value=@Model.Description><br>
-        </div>
-        <div class="form-group">
-            <label for="start">Begin:</label><br>
-            <input type="date" id="start" name="start" value=@Model.Start><br>
-        </div>
-        <div class="form-group">
-            <label for="end">Einde:</label><br>
-            <input type="date" id="end" name="end" value=@Model.End><br>
-        </div>
-        @if (Model.OrganiserId == (user != null ? user.Uuid : Guid.NewGuid())) {
-        @if (user.Uuid == Model.OrganiserId) {
-                <a href="@Url.Action("Edit", "Event", new { @Id = Model.Id } )"><i class="fa fa-edit"></i></a>
+        <div class="col-8">
+            @*INFO*@
+            @if (organisers.Count() > 0)
+            {
+                <div class="form-group col-12">
+                    <label for="description">Organisator:</label><br>
+                    @foreach (InternalUser organiser in organisers)
+                    {
+                        <input type="text" id="organiser" name="organiser" value="@organiser.LastName @organiser.FirstName" class="col-12" style="height:40px"><br>
+                    }
+                </div>
             }
+            <div class="form-group col-12">
+                <label for="start">Begin:</label><br>
+                <input type="date" id="start" name="start" value=@Model.Event.Start.ToString("yyyy-MM-dd") class="col-12" style="height:40px"><br>
+            </div>
+            <div class="form-group col-12">
+                <label for="end">Einde:</label><br>
+                <input type="date" id="end" name="end" value=@Model.Event.End.ToString("yyyy-MM-dd") class="col-12" style="height:40px"><br>
+            </div>
+            @if (Model.Event.OrganiserId == (user != null ? user.Uuid : Guid.NewGuid()))
+            {
+                @if (user.Uuid == Model.Event.OrganiserId)
+                {
+                    <a href="@Url.Action("Edit", "Event", new { @Id = Model.Event.Id } )"><i class="fa fa-edit"></i></a>
+                }
+            }
+        </div>
+    </div>
+    <div>
+        @*ATTENDEES*@
+        <label class="col-12">Deelnemers: </label>
+        @if (Model.Users.Count == 0)
+        {
+            <label class="col-12">Er zijn nog geen deelnemers.</label>
+        }
+        @foreach (InternalUser attendee in @Model.Users)
+        {
+
+            <div class="form-group col-3">
+                @*<img src=@attendee.photo alt="profile picture" class="profile">*@
+                <img src="~/Images/placeholder.jpg" alt="profile picture" class="profile col-12" />
+                <label class="col-12">@attendee.LastName</label><br />
+                <label class="col-12">@attendee.FirstName</label>
+            </div>
+
+
+            @* ---IF YOU WANNA EXCLUDE THE ORGANISER---
+            @if (attendee.Uuid != @Model.Event.OrganiserId)
+            {
+                <div class="form-group col-3">
+                    @*<img src=@attendee.photo alt="profile picture" class="profile">
+                    <img src="~/Images/placeholder.jpg" alt="profile picture" class="profile" />
+                    <label>@attendee.LastName</label><br />
+                    <label>@attendee.FirstName</label>
+                </div>
+            }
+            *@
         }
     </div>
 </div>
-
