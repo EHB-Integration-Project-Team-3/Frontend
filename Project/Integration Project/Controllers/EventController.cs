@@ -136,7 +136,7 @@ namespace Integration_Project.Controllers {
 
             var att = new Attendance();
 
-            att.Header = new Header {
+            att.Header = new HeaderAttendance {
                 Method = Method.CREATE
             };
 
