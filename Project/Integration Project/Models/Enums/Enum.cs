@@ -7,6 +7,7 @@ namespace Integration_Project.Models.Enums {
     public enum EntityType {
         Visitor, 
         Event,
-        Attendance
+        Attendance,
+        User
     }
 }
