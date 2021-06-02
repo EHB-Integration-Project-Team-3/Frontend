@@ -1,21 +1,28 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using Integration_Project.Models;
+using Integration_Project.RabbitMQ;
+using System.Threading;
 using System.Threading.Tasks;
+using RabbitMQ.Client.Events;
+using System.Text;
+using System.Diagnostics;
+using RabbitMQ.Client;
 
-namespace Integration_Project {
-    public class Program {
-        public static void Main(string[] args) {
+namespace Integration_Project
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
             CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => {
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
                     webBuilder.UseStartup<Startup>();
                 });
     }

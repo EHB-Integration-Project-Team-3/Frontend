@@ -1,0 +1,15 @@
+﻿
+@model List<Event>
+
+
+<div class="row card-title d-flex justify-content-center">
+    <h2 class="p-3 mt-3 rounded bg-dark text-white animate__animated animate__bounceInLeft">Events</h2>
+</div>
+<div class="row d-flex justify-content-end">
+    @{ if (Integration_Project.Extensions.HttpHelper.CheckLoggedUser() != null) {
+            <button class="btn btn-dark float-right" onclick="location.href='@Url.Action("Create", "Event")'"><i class="fas fa-plus mx-1"></i>Event Toevoegen</button>
+        }
+    }
+</div>
+
+@Html.Partial("Event/_EventOverview", Model)

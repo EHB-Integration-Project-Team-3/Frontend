@@ -1,0 +1,94 @@
+﻿@model Event
+
+@{
+    ViewData["Title"] = "Create Event";
+}
+<div class="row card-title d-flex justify-content-center">
+    <h2 class="p-3 mt-3 rounded bg-dark text-white animate__animated animate__bounceInLeft">Maak een nieuw event aan</h2>
+</div>
+<div class="row d-flex justify-content-center">
+    <!-- list item image picker -->
+    @using (Html.BeginForm("CreateEvent", "Event", null, FormMethod.Post, null, new { @class = "col-10 mt-4" })) {
+        @Html.AntiForgeryToken();
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Title)
+                    @Html.TextBoxFor(m => Model.Title, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Description)
+                    @Html.TextAreaFor(m => Model.Description, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7">
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Location.City)
+                    @Html.TextBoxFor(m => Model.Location.City, "", new { @id = "inptCity", @class = "form-control inptMaps" })
+                    @Html.ValidationMessageFor(model => model.Location.City, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Location.PostalCode)
+                    @Html.TextBoxFor(m => Model.Location.PostalCode, "", new { @id = "inptPostalCode", @type = "number", @class = "form-control inptMaps" })
+                    @Html.ValidationMessageFor(model => model.Location.PostalCode, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Location.StreetName)
+                    @Html.TextBoxFor(m => Model.Location.StreetName, "", new { @id = "inptStreet", @class = "form-control inptMaps" })
+                    @Html.ValidationMessageFor(model => model.Location.StreetName, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => Model.Location.Number)
+                    @Html.TextBoxFor(m => Model.Location.Number, "", new { @id = "inptNumber", @type = "number", @class = "form-control inptMaps" })
+                    @Html.ValidationMessageFor(model => model.Location.Number, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group">
+                    <div id="map"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Start)
+                    @Html.EditorFor(model => model.Start, new { htmlAttributes = new { @Value = DateTime.Now, @class = "form-control datepicker" } })
+                    @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.End)
+                    @Html.EditorFor(model => model.End, new { htmlAttributes = new { @Value = DateTime.Now, @class = "form-control datepicker" } })
+                    @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" id="txtLat" name="Lat" hidden />
+            <input type="text" id="txtLong" name="Long" hidden />
+        </div>
+
+        <button class="btn btn-dark text-white float-right"><i class="fas fa-plus mx-2"></i>Toevoegen</button>
+
+    }
+
+</div>
+
+

@@ -1,8 +1,43 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model Integration_Project.Controllers.HomeViewModel
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div id="homeBannerSlider" class="carousel slide animate__animated animate__bounceInLeft" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active text-center">
+                    <img class="d-block h-100" src="~/images/logo/banner.png" alt="First slide">
+                </div>
+                <div class="carousel-item text-center">
+                    <img class="d-block h-100" src="~/images/Events/Events_Blue.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item text-center">
+                    <img class="d-block h-100" src="~/images/Events/Events_Background.png" alt="Second slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Terug</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Volgende</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row d-flex justify-content-end mt-5">
+        <button class="btn btn-dark float-right mx-2" onclick="location.href='@Url.Action("Overview", "Event")'"><i class="fas fa-sign-in-alt mx-1"></i>Overzicht</button>
+        @{ if (Integration_Project.Extensions.HttpHelper.CheckLoggedUser() != null) {
+                <button class="btn btn-dark float-right" onclick="location.href='@Url.Action("Create", "Event")'"><i class="fas fa-plus mx-1"></i>Event Toevoegen</button>
+            }
+        }
+    </div>
+    @Html.Partial("Event/_EventOverview", Model.Events)
 </div>

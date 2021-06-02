@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj": {}
+    "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj": {}
   },
   "projects": {
-    "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj": {
+    "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj",
+        "projectUniqueName": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj",
         "projectName": "Integration Project",
-        "projectPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj",
-        "packagesPath": "C:\\Users\\michael.bracke\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\obj\\",
+        "projectPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj",
+        "packagesPath": "C:\\Users\\yonic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\michael.bracke\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yonic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://ciserver:8080/httpAuth/app/nuget/feed/BecosoftCore/default/v2": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,6 +40,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.12, )"
@@ -74,6 +78,14 @@
               "target": "Package",
               "version": "[3.1.5, )"
             },
+            "MlkPwgen": {
+              "target": "Package",
+              "version": "[0.3.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
             "RabbitMQ.Client": {
               "target": "Package",
               "version": "[6.2.1, )"
@@ -97,24 +109,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj": {
+    "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
+        "projectUniqueName": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
         "projectName": "RabbitMQ Receiver",
-        "projectPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
-        "packagesPath": "C:\\Users\\michael.bracke\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\RabbitMQ Receiver\\obj\\",
+        "projectPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\RabbitMQ Receiver.csproj",
+        "packagesPath": "C:\\Users\\yonic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\RabbitMQ Receiver\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\michael.bracke\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yonic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -122,15 +131,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://ciserver:8080/httpAuth/app/nuget/feed/BecosoftCore/default/v2": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj": {
-                "projectPath": "C:\\GitHub\\FRONTEND_INTEGRATION\\Project\\Integration Project\\Integration Project.csproj"
+              "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj": {
+                "projectPath": "C:\\Users\\yonic\\Source\\Repos\\Frontend\\Project\\Integration Project\\Integration Project.csproj"
               }
             }
           }
@@ -165,7 +173,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
