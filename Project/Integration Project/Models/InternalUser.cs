@@ -33,5 +33,20 @@ namespace Integration_Project.Models
 
         [XmlElement("role")]
         public Role Role { get; set; }
+
+        public InternalUser()
+        {
+        }
+
+        public InternalUser(Header header, Guid uuid, int entityVersion, string lastName, string firstName, string emailAddress, Role role)
+        {
+            Header = header;
+            Uuid = uuid;
+            EntityVersion = entityVersion;
+            LastName = lastName;
+            FirstName = firstName;
+            EmailAddress = emailAddress;
+            Role = role;
+        }
     }
 }
