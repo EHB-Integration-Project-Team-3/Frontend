@@ -6,10 +6,9 @@ name: Build and deploy ASP.Net Core app INTEGRATION PROJECT
 on:
   push:
    branches: [ main ]
-   paths:
-    - 'Project/Integration Project/**'               # run on all changes to this dir
   workflow_dispatch:
 
+    
 jobs:
   build:
     runs-on: windows-latest
@@ -24,11 +23,12 @@ jobs:
 
     - name: Build with dotnet
       run: dotnet build --configuration Release
-
-      
+      working-directory: ./Project/Integration Project/
+     
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
+      working-directory: ./Project/Integration Project/
+      
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
