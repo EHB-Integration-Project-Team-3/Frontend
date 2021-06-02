@@ -10,17 +10,21 @@ using Integration_Project.RabbitMQ;
 using Integration_Project.Services.MUUIDService.Interface;
 using Integration_Project.Models.Enums;
 using Integration_Project.Extensions;
+using Integration_Project.ViewModels;
+using Integration_Project.Services.UserService.Interface;
 
 namespace Integration_Project.Controllers {
     public class EventController : Controller {
         private readonly IEventService _eventService;
         private readonly IMUUIDService _muuidService;
         private readonly IAttendanceService _attendanceService;
+        private readonly IUserService _userService;
 
-        public EventController(IEventService eventService, IMUUIDService muuidService, IAttendanceService attendanceService) {
+        public EventController(IEventService eventService, IMUUIDService muuidService, IAttendanceService attendanceService, IUserService userService) {
             _eventService = eventService;
             _muuidService = muuidService;
             _attendanceService = attendanceService;
+            _userService = userService;
         }
 
         public IActionResult Index() {
@@ -51,8 +55,17 @@ namespace Integration_Project.Controllers {
 
         public IActionResult Detail(int Id) {
             var ev = _eventService.Get(Id);
+            var users = new List<InternalUser>();
+            foreach (Attendance attendance in _attendanceService.GetAllForEvent(ev.Uuid))
+            {
+                users.Add(_userService.Get(attendance.UserId));
+            }
 
-            return View("Detail", ev);
+            var viewmodel = new EventdetailViewModel();
+            viewmodel.Event = ev;
+            viewmodel.Users = users;
+
+            return View("Detail", viewmodel);
         }
 
         public IActionResult Edit(int id) {
