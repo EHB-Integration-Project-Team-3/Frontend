@@ -101,7 +101,7 @@ namespace Integration_Project.Services.AttendanceService
             {
                 try
                 {
-                    return context.Attendances.Where(a => a.UserId == UserId).ToList();
+                    return context.Attendances.Where(a => a.CreatorId == UserId).ToList();
                 }
                 catch (Exception ex)
                 {
@@ -120,7 +120,7 @@ namespace Integration_Project.Services.AttendanceService
                     var attendance = context.Attendances.Where(a => a.Uuid == t.Uuid).FirstOrDefault();
                     if (attendance != null)
                     {
-                        attendance.UserId = t.UserId;
+                        attendance.CreatorId = t.CreatorId;
                         attendance.EventId = t.EventId;
                         context.Update(attendance);
                         context.SaveChanges();

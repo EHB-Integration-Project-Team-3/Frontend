@@ -21,7 +21,7 @@ namespace Integration_Project.Tests
             {
                 Method = Method.CREATE
             };
-            InternalUser user = new(header, Guid.Parse("edf24afa-1c52-4dfb-ba65-eacb69d58c0b"), 1, "lastName", "firstName", "email@email.com", Role.student);
+            // InternalUser user = new(header, Guid.Parse("edf24afa-1c52-4dfb-ba65-eacb69d58c0b"), 1, "lastName", "firstName", "email@email.com", Role.student);
 
             Event @event = new(header, Guid.Parse("edf24afa-1c52-4dfb-ba65-eacb69d58c0c"), 1, "title", user.Uuid, "description", DateTime.Parse("2000-01-28 13:00"), DateTime.Parse("2000-01-28 13:30"), "StreetName%Number%Bus%City%PostalCode");
 

@@ -38,7 +38,7 @@ namespace Integration_Project.Services.MUUIDService {
         }
 
         public MUUIDReceive Get(Guid uuid) {
-            string sql = $"SELECT * FROM master WHERE UUID = UUID_TO_BIN('{uuid}');";
+            string sql = $"SELECT * FROM master WHERE UUID = UUID_TO_BIN('{uuid}') AND Source = 'FRONTEND';";
             MUUIDReceive receivedModal = new MUUIDReceive();
             try {
                 using (MySqlConnection connection = new MySqlConnection(conString)) {

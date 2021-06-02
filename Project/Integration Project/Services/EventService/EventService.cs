@@ -39,8 +39,18 @@ namespace Integration_Project.Services.EventService {
             using (var context = new Integration_ProjectContext()) {
                 try {
                     var foundEvent = context.Events.Where(p => p.Uuid == Event.Uuid).FirstOrDefault();
-                    if (foundEvent != null)
-                        context.Update(Event);
+                    if (foundEvent != null) {
+                        foundEvent.Attendees = Event.Attendees;
+                        foundEvent.Description = Event.Description;
+                        foundEvent.End = Event.End;
+                        foundEvent.Start = Event.Start;
+                        foundEvent.Title = Event.Title;
+                        foundEvent.Uuid = Event.Uuid;
+                        foundEvent.Location = Event.Location;
+                        foundEvent.EntityVersion = Event.EntityVersion;
+                        foundEvent.LocationRabbit = Event.LocationRabbit;
+                    }
+                    context.Update(foundEvent);
                     context.SaveChanges();
                     return true;
                 } catch (Exception ex) {
