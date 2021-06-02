@@ -45,12 +45,21 @@ namespace Integration_Project.Controllers
             return View(Events == null ? new List<Event>() : Events);
         }
 
-        public IActionResult SubscribeToEvent(Guid eventId)
+        public IActionResult SubscribeToEvent(int eventId)
         {
+            HeaderAttendance header = new HeaderAttendance
+            {
+                Method = Method.CREATE
+            };
+
+            Event @event = _eventService.Get(eventId);
+
             var attendance = new Attendance
             {
-                EventId = eventId,
-                UserId = HttpHelper.CheckLoggedUser().Uuid,
+                Header = header,
+                EventId = @event.Uuid,
+                UserId = @event.OrganiserId,
+                AttendeeId = HttpHelper.CheckLoggedUser().Uuid,
             };
             if (_attendanceService.Add(attendance))
             {
@@ -165,6 +174,7 @@ namespace Integration_Project.Controllers
             att.Uuid = _muuidService.GetUUID();
             att.UserId = Ev.OrganiserId;  //user != null ? user.Uuid : new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1"); //uuid van ingelogde user
             att.EventId = Ev.Uuid;
+            att.AttendeeId = Ev.OrganiserId;
             // set on rabbit que to other platforms
             Rabbit.Send<Attendance>(att, Constants.AttendanceX);
 
