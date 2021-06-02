@@ -6,10 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Integration_Project.Models {
+namespace Integration_Project.Models
+{
     [XmlRoot(ElementName = "event")]
-    public class Event {
-
+    public class Event
+    {
         [XmlElement("header")]
         public Header Header { get; set; }
 
@@ -39,20 +40,17 @@ namespace Integration_Project.Models {
         [XmlElement("start")]
         [Required(ErrorMessage = "Begin datum is vereist.")]
         [DisplayName("Start Datum")]
-
         public DateTime Start { get; set; }
 
         [XmlElement("end")]
         [DisplayName("Eind Datum")]
         [Required(ErrorMessage = "Eind datum is vereist.")]
-
         public DateTime End { get; set; }
 
         //[XmlElement("location")]
         [XmlIgnore]
         [DisplayName("Locatie")]
         [Required(ErrorMessage = "Locatie is vereist.")]
-
         public Location Location { get; set; }
 
         [XmlIgnore]
@@ -64,12 +62,28 @@ namespace Integration_Project.Models {
         [XmlElement("location")]
         public string LocationRabbit { get; set; }
 
-
         /// <summary>
         /// Lijst van inschreven personen, dienen deze ook via xml door te sturen? Of hoe wordt dit gedaan?
         /// </summary>
 
         [XmlIgnore]
         public List<Attendance> Attendees { get; set; }
+
+        public Event()
+        {
+        }
+
+        public Event(Header header, Guid uuid, int entityVersion, string title, Guid organiserId, string description, DateTime start, DateTime end, string locationRabbit)
+        {
+            Header = header;
+            Uuid = uuid;
+            EntityVersion = entityVersion;
+            Title = title;
+            OrganiserId = organiserId;
+            Description = description;
+            Start = start;
+            End = end;
+            LocationRabbit = locationRabbit;
+        }
     }
 }

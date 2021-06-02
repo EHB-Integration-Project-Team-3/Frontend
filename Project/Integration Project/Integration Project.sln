@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integration Project", "Integration Project.csproj", "{69D6AD21-C7C2-44E4-B528-2B64A4E243D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ Receiver", "..\RabbitMQ Receiver\RabbitMQ Receiver.csproj", "{9633B8A8-E5EB-4574-AD4F-1519B8D83DC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQ Receiver", "..\RabbitMQ Receiver\RabbitMQ Receiver.csproj", "{9633B8A8-E5EB-4574-AD4F-1519B8D83DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration Project.Tests", "..\Integration Project.Tests\Integration Project.Tests.csproj", "{783AB5FC-19D5-4F99-A1A1-7CCEB264F946}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9633B8A8-E5EB-4574-AD4F-1519B8D83DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9633B8A8-E5EB-4574-AD4F-1519B8D83DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9633B8A8-E5EB-4574-AD4F-1519B8D83DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{783AB5FC-19D5-4F99-A1A1-7CCEB264F946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783AB5FC-19D5-4F99-A1A1-7CCEB264F946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783AB5FC-19D5-4F99-A1A1-7CCEB264F946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783AB5FC-19D5-4F99-A1A1-7CCEB264F946}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
