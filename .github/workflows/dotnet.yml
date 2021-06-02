@@ -47,11 +47,13 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: .net-app
-        
+    
+    - name: Create VPN connection & Connect to it
+      shell: pwsh
     - run: | 
        Add-VpnConnection -Name "EHB_VPN" -ServerAddress "dtsslvpn.ehb.be" -TunnelType "SSTP" -AllUserConnection -Force
        rasdial "EHB_VPN" "michael.bracke@student.ehb.be" "Rsg9y2Hpp"
-      shell: cmd
+
 
 
     - name: 📂 Sync files to ftp
