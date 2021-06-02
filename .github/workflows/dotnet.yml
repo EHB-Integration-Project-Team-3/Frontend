@@ -7,7 +7,11 @@ on:
   push:
    branches: [ main ]
   workflow_dispatch:
-
+  
+defaults:
+  run:
+    working-directory: ./Project/Integration Project/
+    
 jobs:
   build:
     runs-on: windows-latest
@@ -22,7 +26,6 @@ jobs:
 
     - name: Build with dotnet
       run: dotnet build --configuration Release
-      working-directory: ./Project/Integration Project/
       
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
