@@ -36,7 +36,7 @@
             @if (organisers.Count() > 0)
             {
                 <div class="form-group col-12">
-                    <label for="description">Organiser:</label><br>
+                    <label for="description">Organisator:</label><br>
                     @foreach (InternalUser organiser in organisers)
                     {
                         <input type="text" id="organiser" name="organiser" value="@organiser.LastName @organiser.FirstName" class="col-12" style="height:40px"><br>
