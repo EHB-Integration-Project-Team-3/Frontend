@@ -57,29 +57,28 @@ namespace RabbitMQ_Receiver {
 
                         try {
                             if (receivedEvent.Header.Method == Method.CREATE) {
-                                if (new EventService().Add(receivedEvent))
-                                    Console.WriteLine($"\nEvent successfully added to database");
-                                else
+                                var ev = new EventService().Add(receivedEvent);
+                                if (ev != null) {
+                                    new MUUIDService().InsertIntoMUUID(new Integration_Project.Models.MUUID.Send.MUUIDSend {
+                                        EntityType = EntityType.Event,
+                                        Source = Source.FRONTEND,
+                                        Source_EntityId = ev.Id.ToString(),
+                                        Uuid = receivedEvent.Uuid
+                                    });
+                                } else
                                     Console.WriteLine($"\nFailed to add event to database");
                             } else if (receivedEvent.Header.Method == Method.UPDATE) {
-                                if (receivedEvent.EntityVersion > new MUUIDService().Get(receivedEvent.Uuid).EntityVersion)
-                                    if (new EventService().Update(receivedEvent)) {
-                                        new MUUIDService().UpdateEntityVersion(new Integration_Project.Models.MUUID.Send.MUUIDSend {
-                                            EntityType = EntityType.Event,
-                                            Source = Source.FRONTEND,
-                                            Source_EntityId = receivedEvent.Id.ToString(),
-                                            Uuid = receivedEvent.Uuid
-                                        }, new MUUIDService().Get(receivedEvent.Uuid).EntityVersion);
+                                if (receivedEvent.EntityVersion > new EventService().Get(receivedEvent.Uuid).EntityVersion) {
+                                    var evDatabase = new EventService().Get(receivedEvent.Uuid);
+                                    receivedEvent.Id = evDatabase.Id;
+                                    if (new EventService().Update(receivedEvent)) {                                   
                                         Console.WriteLine($"\nEvent successfully updated in database");
                                     } else
                                         Console.WriteLine($"\nFailed to update event in database");
-                                else
+                                } else
                                     Console.WriteLine($"\nReceived event is outdated");
-                            } else if (receivedEvent.Header.Method == Method.DELETE) {
-                                if (new EventService().Delete(receivedEvent.Uuid))
+                            } else if (receivedEvent.Header.Method == Method.DELETE) {                              
                                     Console.WriteLine($"\nEvent successfully deleted from database");
-                                else
-                                    Console.WriteLine($"\nFailed to delete event from database");
                             }
                         } catch (Exception ex) {
                             Console.WriteLine(ex);
@@ -109,9 +108,15 @@ namespace RabbitMQ_Receiver {
                                     Console.WriteLine($"\nFailed to add user to database");
                             } else if (receivedUser.Header.Method == Method.UPDATE) {
                                 if (receivedUser.EntityVersion > new MUUIDService().Get(receivedUser.Uuid).EntityVersion)
-                                    if (new UserService().Update(receivedUser))
+                                    if (new UserService().Update(receivedUser)) {
+                                        new MUUIDService().UpdateEntityVersion(new Integration_Project.Models.MUUID.Send.MUUIDSend {
+                                            EntityType = EntityType.User,
+                                            Source = Source.FRONTEND,
+                                            Source_EntityId = receivedUser.Uuid.ToString(),
+                                            Uuid = receivedUser.Uuid
+                                        }, new MUUIDService().Get(receivedUser.Uuid).EntityVersion);
                                         Console.WriteLine($"\nUser successfully updated in database");
-                                    else
+                                    } else
                                         Console.WriteLine($"\nFailed to update user in database");
                                 else
                                     Console.WriteLine($"\nReceived user is outdated");
