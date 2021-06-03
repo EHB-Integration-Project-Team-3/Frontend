@@ -125,6 +125,8 @@ namespace Integration_Project.Controllers {
             Ev.OrganiserId = user != null ? user.Uuid : new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1"); //uuid van ingelogde user
             Ev.LocationRabbit = Ev.Location.ToString();
             Ev.EntityVersion = 1;
+            var evC = _eventService.GetAll().LastOrDefault().Id;
+
             // set on rabbit que to other platforms
             Rabbit.Send<Event>(Ev, Constants.EventX);
 
@@ -132,7 +134,7 @@ namespace Integration_Project.Controllers {
             _muuidService.InsertIntoMUUID(new Models.MUUID.Send.MUUIDSend {
                 EntityType = EntityType.Event,
                 Source = Source.FRONTEND,
-                Source_EntityId = Ev.Id.ToString(),
+                Source_EntityId = (evC += 1).ToString(),
                 Uuid = Ev.Uuid
             });
 
