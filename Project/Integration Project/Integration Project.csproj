@@ -33,4 +33,19 @@
     <Folder Include="Services\Interface\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="RabbitMQ\XSD\Attendance.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="RabbitMQ\XSD\Event.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="RabbitMQ\XSD\Heartbeat.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="RabbitMQ\XSD\InternalUser.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
