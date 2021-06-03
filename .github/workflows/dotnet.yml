@@ -20,7 +20,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.301'
-
+        
+    - name: check version donet
+      run: dotnet --info
+ 
     - name: Build with dotnet
       run: dotnet build --configuration Release
       working-directory: ./Project/Integration Project/
