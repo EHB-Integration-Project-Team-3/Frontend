@@ -40,11 +40,14 @@ namespace Integration_Project.Controllers {
         }
 
         public IActionResult SubscribeToEvent(int eventId) {
+
             HeaderAttendance header = new HeaderAttendance {
                 Method = Method.CREATE
             };
 
             Event @event = _eventService.Get(eventId);
+            @event.Attendees = _attendanceService.GetAllForEvent(@event.Uuid);
+
 
             var attendance = new Attendance {
                 Header = header,
@@ -52,12 +55,36 @@ namespace Integration_Project.Controllers {
                 CreatorId = @event.OrganiserId,
                 AttendeeId = HttpHelper.CheckLoggedUser().Uuid,
             };
-            if (_attendanceService.Add(attendance)) {
+
+            @event.Attendees.Add(attendance);
+
+            if (_attendanceService.Add(attendance) && _eventService.Update(@event)) {
+
                 Rabbit.Send<Attendance>(attendance, Constants.AttendanceX);
                 return Redirect(HttpContext.Request.Headers["Referer"]);
+
             }
             // failed to save attendace
             return View();
+        }
+
+        public IActionResult DeleteEvent(int eventId) {
+            var ev = _eventService.Get(eventId);
+            ev.Header = new Header { Method = Method.DELETE };
+            if (_eventService.Delete(eventId)) {
+
+                // update entity version in MUUID database
+                _muuidService.UpdateEntityVersion(new Models.MUUID.Send.MUUIDSend {
+                    EntityType = EntityType.Event,
+                    Source_EntityId = ev.Id.ToString(),
+                    Source = Source.FRONTEND,
+                    Uuid = ev.Uuid
+                }, ev.EntityVersion);
+
+                // put delete on rabbitMQ
+                Rabbit.Send<Event>(ev, Constants.EventX);
+            }
+            return RedirectToAction("Overview", "Event");
         }
 
         public IActionResult Detail(int Id) {
@@ -86,10 +113,18 @@ namespace Integration_Project.Controllers {
             ev.Header = new Header {
                 Method = Method.UPDATE
             };
-            ev.EntityVersion += 1;
-            Rabbit.Send<Event>(ev, Constants.EventX);
 
-            //_eventService.Update(ev); naar de receiver verplaatst
+            ev.EntityVersion += 1;
+
+            _muuidService.UpdateEntityVersion(new Integration_Project.Models.MUUID.Send.MUUIDSend {
+                EntityType = EntityType.Event,
+                Source = Source.FRONTEND,
+                Source_EntityId = ev.Id.ToString(),
+                Uuid = ev.Uuid
+            }, _muuidService.Get(ev.Uuid).EntityVersion);
+
+
+            Rabbit.Send<Event>(ev, Constants.EventX);
 
             return RedirectToAction("Overview", "Event");
         }
@@ -125,18 +160,12 @@ namespace Integration_Project.Controllers {
             Ev.OrganiserId = user != null ? user.Uuid : new Guid("84e36290-19bc-4e48-8cb6-9d80322dcaf1"); //uuid van ingelogde user
             Ev.LocationRabbit = Ev.Location.ToString();
             Ev.EntityVersion = 1;
-            var evC = _eventService.GetAll().LastOrDefault().Id;
+
+            var evC = _eventService.GetAll().Count != 0 ? _eventService.GetAll().LastOrDefault().Id : 0;
 
             // set on rabbit que to other platforms
             Rabbit.Send<Event>(Ev, Constants.EventX);
 
-            // create new row in MUUID
-            _muuidService.InsertIntoMUUID(new Models.MUUID.Send.MUUIDSend {
-                EntityType = EntityType.Event,
-                Source = Source.FRONTEND,
-                Source_EntityId = (evC += 1).ToString(),
-                Uuid = Ev.Uuid
-            });
 
             //Add LoggedUser to Event Attendance
 

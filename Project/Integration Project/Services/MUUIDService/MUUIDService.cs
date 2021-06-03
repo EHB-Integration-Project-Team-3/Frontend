@@ -64,7 +64,8 @@ namespace Integration_Project.Services.MUUIDService {
         }
 
         public bool UpdateEntityVersion(MUUIDSend sendModal, int currentEntityVersion) {
-            string sql = $"update master set EntityVersion = {currentEntityVersion + 1} " +
+            string sql = 
+                $"update master set EntityVersion = {currentEntityVersion + 1} " +
                 $"where Source = '{sendModal.Source}' and EntityVersion = {currentEntityVersion} and UUID = UUID_TO_BIN('{sendModal.Uuid}')";
             try {
                 using (MySqlConnection connection = new MySqlConnection(conString)) {
