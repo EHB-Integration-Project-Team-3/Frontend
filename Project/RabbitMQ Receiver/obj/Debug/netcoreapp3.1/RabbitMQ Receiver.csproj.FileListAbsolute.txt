@@ -843,3 +843,7 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.pdb
 C:\GitHub\FRONTEND_INTEGRATION\Project\RabbitMQ Receiver\obj\Debug\netcoreapp3.1\RabbitMQ Receiver.genruntimeconfig.cache
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Attendance.xsd
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Event.xsd
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Heartbeat.xsd
+D:\GitHub\Frontend\Project\RabbitMQ Receiver\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\InternalUser.xsd

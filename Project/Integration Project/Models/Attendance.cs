@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Integration_Project.Models {
+namespace Integration_Project.Models
+{
     [XmlRoot(ElementName = "attendance")]
-    public class Attendance {
+    public class Attendance
+    {
         [XmlElement("header")]
         public HeaderAttendance Header { get; set; }
 
@@ -23,5 +25,18 @@ namespace Integration_Project.Models {
 
         [XmlElement("eventId")]
         public Guid EventId { get; set; }
+
+        public Attendance()
+        {
+        }
+
+        public Attendance(HeaderAttendance header, Guid uuid, Guid creatorId, Guid attendeeId, Guid eventId)
+        {
+            Header = header;
+            Uuid = uuid;
+            CreatorId = creatorId;
+            AttendeeId = attendeeId;
+            EventId = eventId;
+        }
     }
 }
