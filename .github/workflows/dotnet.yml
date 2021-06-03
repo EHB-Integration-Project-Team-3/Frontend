@@ -29,7 +29,7 @@ jobs:
       working-directory: ./Project/Integration Project/
      
     - name: dotnet publish
-      run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp -r win10-x64 --self-contained false
       working-directory: ./Project/Integration Project/
       
     - name: Upload artifact for deployment job
