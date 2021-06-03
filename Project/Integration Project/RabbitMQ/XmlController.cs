@@ -61,8 +61,11 @@ namespace Integration_Project.RabbitMQ
                 string xsdType = fullObjectName[^1];
                 string schemaFile;
 
-                // schemaFile = $@"{Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\.."))}\Integration Project\RabbitMQ\XSD\{xsdType}.xsd";
+#if DEBUG
+                schemaFile = $@"{Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\.."))}\Integration Project\RabbitMQ\XSD\{xsdType}.xsd";
+#else
                 schemaFile = $@"C:\inetpub\ftproot\Integration_Project\RabbitMQ\XSD\{xsdType}.xsd";
+#endif
 
                 XmlTextReader schemaReader = new XmlTextReader(schemaFile);
                 XmlSchema schema = XmlSchema.Read(schemaReader, SchemaValidationHandler);
