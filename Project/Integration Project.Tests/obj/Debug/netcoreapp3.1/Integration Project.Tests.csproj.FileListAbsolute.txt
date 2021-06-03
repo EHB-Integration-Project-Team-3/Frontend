@@ -506,14 +506,12 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project.Tests\obj\Debug\netco
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.dll
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.pdb
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.genruntimeconfig.cache
-D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.csprojAssemblyReference.cache
-D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.AssemblyInfoInputs.cache
-D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.AssemblyInfo.cs
-D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.csproj.CoreCompileInputs.cache
-D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.pdb
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\appsettings.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\libman.json
+D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\testhost.exe
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\testhost.dll
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.Views.dll
@@ -521,14 +519,12 @@ D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Int
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.deps.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.runtimeconfig.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.runtimeconfig.dev.json
+D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.exe
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.deps.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.runtimeconfig.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.runtimeconfig.dev.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.exe
-D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
-D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.Tests.deps.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.Tests.runtimeconfig.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.Tests.runtimeconfig.dev.json
@@ -1010,6 +1006,15 @@ D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Int
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.dll
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.pdb
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.pdb
+D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.csprojAssemblyReference.cache
+D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.AssemblyInfoInputs.cache
+D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.AssemblyInfo.cs
+D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.csproj.CoreCompileInputs.cache
 D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.csproj.CopyComplete
 D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.dll
+D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.pdb
 D:\GitHub\Frontend\Project\Integration Project.Tests\obj\Debug\netcoreapp3.1\Integration Project.Tests.genruntimeconfig.cache
+D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Attendance.xsd
+D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Event.xsd
+D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Heartbeat.xsd
+D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\InternalUser.xsd
