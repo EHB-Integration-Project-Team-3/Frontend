@@ -519,7 +519,6 @@ D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Int
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.deps.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.runtimeconfig.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.runtimeconfig.dev.json
-D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.exe
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.deps.json
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ Receiver.runtimeconfig.json

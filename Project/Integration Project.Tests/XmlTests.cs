@@ -3,10 +3,6 @@ using Integration_Project.Models.Enums;
 using Integration_Project.RabbitMQ;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Integration_Project.Tests
 {
@@ -162,12 +158,22 @@ namespace Integration_Project.Tests
             string xmlStringAttendance = "<?xml version=\"1.0\"?>\r\n<attendance xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <header>\r\n    <method>CREATE</method>\r\n  </header>\r\n  <uuid>edf24afa-1c52-4dfb-ba65-eacb69d58c0e</uuid>\r\n  <creatorId>edf24afa-1c52-4dfb-ba65-eacb69d58c0b</creatorId>\r\n  <attendeeId>edf24afa-1c52-4dfb-ba65-eacb69d58c0d</attendeeId>\r\n  <eventId>edf24afa-1c52-4dfb-ba65-eacb69d58c0c</eventId>\r\n</attendance>";
 
             //Act
+            var xsdResultUser = XmlController.ValidateXml(xmlStringUser, typeof(InternalUser));
+            var xsdResultEvent = XmlController.ValidateXml(xmlStringEvent, typeof(Event));
+            var xsdResultHeartbeat = XmlController.ValidateXml(xmlStringHeartbeat, typeof(Heartbeat));
+            var xsdResultAttendance = XmlController.ValidateXml(xmlStringAttendance, typeof(Attendance));
+
             InternalUser resultUser = XmlController.DeserializeXmlString<InternalUser>(xmlStringUser);
             Event resultEvent = XmlController.DeserializeXmlString<Event>(xmlStringEvent);
             Heartbeat resultHeartbeat = XmlController.DeserializeXmlString<Heartbeat>(xmlStringHeartbeat);
             Attendance resultAttendance = XmlController.DeserializeXmlString<Attendance>(xmlStringAttendance);
 
             //Assert
+            Assert.IsTrue(xsdResultUser);
+            Assert.IsTrue(xsdResultEvent);
+            Assert.IsTrue(xsdResultHeartbeat);
+            Assert.IsTrue(xsdResultAttendance);
+
             Assert.IsTrue(resultUser.EmailAddress == user.EmailAddress);
             Assert.IsTrue(resultUser.EntityVersion == user.EntityVersion);
             Assert.IsTrue(resultUser.FirstName == user.FirstName);
@@ -203,23 +209,15 @@ namespace Integration_Project.Tests
         public void DeserializeFail_MissingElement()
         {
             //Arrange
-            Header header = null;
-            InternalUser user = new InternalUser()
-            {
-                Header = header,
-                Uuid = Guid.Parse("edf24afa-1c52-4dfb-ba65-eacb69d58c0b"),
-                EntityVersion = 1,
-                LastName = "lastName",
-                FirstName = "firstName",
-                EmailAddress = "email@email.com",
-                Role = Role.student
-            };
+
+            string xmlStringUser = "<?xml version=\"1.0\"?>\r\n<user xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <uuid>edf24afa-1c52-4dfb-ba65-eacb69d58c0b</uuid>\r\n  <entityVersion>1</entityVersion>\r\n  <lastName>lastName</lastName>\r\n  <firstName>firstName</firstName>\r\n  <emailAddress>email@email.com</emailAddress>\r\n  <role>student</role>\r\n</user>";
 
             //Act
-            string result = XmlController.SerializeToXmlString(user);
+
+            var result = XmlController.ValidateXml(xmlStringUser, typeof(InternalUser));
 
             //Assert
-            Assert.IsNull(result);
+            Assert.IsFalse(result);
         }
     }
 }

@@ -1317,7 +1317,6 @@ C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.pdb
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.genruntimeconfig.cache
 C:\GitHub\FRONTEND_INTEGRATION\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
-D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Attendance.xsd
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Event.xsd
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Heartbeat.xsd
