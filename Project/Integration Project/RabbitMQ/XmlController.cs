@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Hosting;
+using System;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -59,7 +60,9 @@ namespace Integration_Project.RabbitMQ
                 string[] fullObjectName = @object.ToString().Split('.');
                 string xsdType = fullObjectName[^1];
 
-                string schemaFile = $@"{Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\.."))}\Integration Project\RabbitMQ\XSD\{xsdType}.xsd";
+                string schemaFile =                     
+                    $@"{
+                        Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\.."))}\Integration Project\RabbitMQ\XSD\{xsdType}.xsd";
 
                 XmlTextReader schemaReader = new XmlTextReader(schemaFile);
                 XmlSchema schema = XmlSchema.Read(schemaReader, SchemaValidationHandler);

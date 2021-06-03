@@ -67,7 +67,7 @@ namespace Integration_Project.Models
         /// </summary>
 
         [XmlIgnore]
-        public List<Attendance> Attendees { get; set; }
+        public List<Attendance> Attendees { get; set; } = new List<Attendance>();
 
         public Event()
         {

@@ -38,9 +38,7 @@ namespace Integration_Project.Services.EventService {
         public bool Update(Event Event) {
             using (var context = new Integration_ProjectContext()) {
                 try {
-                    var foundEvent = context.Events.Where(p => p.Uuid == Event.Uuid).FirstOrDefault();
-                    if (foundEvent != null)
-                        context.Update(Event);
+                    context.Events.Update(Event);
                     context.SaveChanges();
                     return true;
                 } catch (Exception ex) {

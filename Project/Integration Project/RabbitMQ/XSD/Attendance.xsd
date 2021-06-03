@@ -24,7 +24,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="creatorid">
+        <xs:element name="creatorId">
           <xs:simpleType>
             <xs:restriction base="xs:string">
               <xs:pattern value="[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}" />

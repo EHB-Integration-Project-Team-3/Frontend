@@ -20,7 +20,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.301'
-
+        
+    - name: check version donet
+      run: dotnet --info
+ 
     - name: Build with dotnet
       run: dotnet build --configuration Release
       working-directory: ./Project/Integration Project/
@@ -63,6 +66,20 @@ jobs:
         username: administrator
         password: poi987POI
         port: 21
+
+    - name: Run Commands via SSH To Start/Stop
+      uses: Flaavius/ssh-commands@1.0
+      with:
+        command: sh service.sh
+        host: 10.3.17.65
+        username: administrator
+        password: ${{secrets.VM_PASSWORD }}
+        tryKeyboard: true
+
+
+
+
+
     
     
         

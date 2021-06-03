@@ -38,7 +38,7 @@ namespace Integration_Project.Services.MUUIDService {
         }
 
         public MUUIDReceive Get(Guid uuid) {
-            string sql = $"SELECT * FROM master WHERE UUID = UUID_TO_BIN('{uuid}');";
+            string sql = $"SELECT * FROM master WHERE UUID = UUID_TO_BIN('{uuid}') AND Source = 'FRONTEND';";
             MUUIDReceive receivedModal = new MUUIDReceive();
             try {
                 using (MySqlConnection connection = new MySqlConnection(conString)) {
@@ -64,10 +64,8 @@ namespace Integration_Project.Services.MUUIDService {
         }
 
         public bool UpdateEntityVersion(MUUIDSend sendModal, int currentEntityVersion) {
-            string sql = $"update master set EntityVersion = {currentEntityVersion} " +
-                $"where Source = '{sendModal.Source}' and EntityVersion = {currentEntityVersion} - 1 and UUID = UUID_TO_BIN('{sendModal.Uuid}') and " +
-                $"(select EntityVersion from master where Source = 'Canvas') < {currentEntityVersion} and " +
-                $"(select EntityVersion from master where Source = 'PLANNING') < {currentEntityVersion};";
+            string sql = $"update master set EntityVersion = {currentEntityVersion + 1} " +
+                $"where Source = '{sendModal.Source}' and EntityVersion = {currentEntityVersion} and UUID = UUID_TO_BIN('{sendModal.Uuid}')";
             try {
                 using (MySqlConnection connection = new MySqlConnection(conString)) {
                     connection.Open();

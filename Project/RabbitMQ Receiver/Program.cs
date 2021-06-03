@@ -63,9 +63,15 @@ namespace RabbitMQ_Receiver {
                                     Console.WriteLine($"\nFailed to add event to database");
                             } else if (receivedEvent.Header.Method == Method.UPDATE) {
                                 if (receivedEvent.EntityVersion > new MUUIDService().Get(receivedEvent.Uuid).EntityVersion)
-                                    if (new EventService().Update(receivedEvent))
+                                    if (new EventService().Update(receivedEvent)) {
+                                        new MUUIDService().UpdateEntityVersion(new Integration_Project.Models.MUUID.Send.MUUIDSend {
+                                            EntityType = EntityType.Event,
+                                            Source = Source.FRONTEND,
+                                            Source_EntityId = receivedEvent.Id.ToString(),
+                                            Uuid = receivedEvent.Uuid
+                                        }, new MUUIDService().Get(receivedEvent.Uuid).EntityVersion);
                                         Console.WriteLine($"\nEvent successfully updated in database");
-                                    else
+                                    } else
                                         Console.WriteLine($"\nFailed to update event in database");
                                 else
                                     Console.WriteLine($"\nReceived event is outdated");
@@ -90,11 +96,13 @@ namespace RabbitMQ_Receiver {
 
                         try {
                             if (receivedUser.Header.Method == Method.CREATE) {
-                                if (new UserService().Add(receivedUser)) {
+                                var user = new UserService().Add(receivedUser);
+                                if (user != null) {
                                     new MUUIDService().InsertIntoMUUID(new Integration_Project.Models.MUUID.Send.MUUIDSend {
+                                        Uuid = receivedUser.Uuid,
                                         EntityType = EntityType.User,
                                         Source = Source.FRONTEND,
-                                        Source_EntityId = new UserService().Get(receivedUser.Uuid).Uuid.ToString(),
+                                        Source_EntityId = user.Uuid.ToString(),
                                     });
                                     Console.WriteLine($"\nUser successfully added to database");
                                 } else

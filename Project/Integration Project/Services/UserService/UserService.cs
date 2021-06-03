@@ -1,5 +1,6 @@
 ﻿using Integration_Project.Areas.Identity.Data;
 using Integration_Project.Models;
+using Integration_Project.Services.EventService.Interface;
 using Integration_Project.Services.UserService.Interface;
 using System;
 using System.Collections.Generic;
@@ -8,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace Integration_Project.Services.UserService {
     public class UserService : IUserService {
-        public bool Add(InternalUser t) {
+        public InternalUser Add(InternalUser t) {
             using (var context = new Integration_ProjectContext()) {
                 try {
-                    context.Add(t);
+                    var u = context.Add(t);
                     context.SaveChanges();
-                    return true;
+                    return u.Entity;
                 } catch (Exception ex) {
                     Console.WriteLine(ex);
-                    return false;
+                    return null;
                 }
 
             }
@@ -75,5 +76,7 @@ namespace Integration_Project.Services.UserService {
 
             }
         }
+
+        bool IBaseService<InternalUser>.Add(InternalUser t) => throw new NotImplementedException();
     }
 }

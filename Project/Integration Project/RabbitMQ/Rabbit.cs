@@ -17,6 +17,7 @@ namespace Integration_Project.RabbitMQ
             if (xmlString != null)
             {
                 var factory = new ConnectionFactory() { Uri = new Uri(Constants.Connection) };
+
                 using var connection = factory.CreateConnection();
                 using var channel = connection.CreateModel();
 

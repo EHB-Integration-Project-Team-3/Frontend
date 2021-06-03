@@ -50,10 +50,10 @@
                     }
                 }
                 @if (user != null) {
-                    @if (ev.Attendees.Any(p => p.UserId == user.Uuid)) {
+                    @if (ev.Attendees != null && ev.Attendees.Any(p => p.CreatorId == user.Uuid)) {
                         <i class="fas fa-check"></i>
                     } else {
-                        <a href="@Url.Action("SubscribeToEvent", "Event", new { @eventId = ev.Uuid } )"><i class="fas fa-user-plus"></i></a>
+                        <a href="@Url.Action("SubscribeToEvent", "Event", new { @eventId = ev.Id } )"><i class="fas fa-user-plus"></i></a>
 
                     };
                 }
