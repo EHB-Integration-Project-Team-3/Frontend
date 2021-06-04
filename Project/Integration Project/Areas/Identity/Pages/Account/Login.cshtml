@@ -19,7 +19,7 @@
     <div class="col-md-6">
         <section>
             <form id="account" asp-action="Validate" asp-controller="User" method="post">
-                <h1>Inloggen</h1>
+                <h1 style="text-align:center;margin-top:25px">Inloggen</h1>
                 <hr />
                 <div asp-validation-summary="All" class="text-danger">
                     @errorMessage
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label>Wachtwoord</label>
-                    <input name="Wachtwoord" id="wachtwoord" class="form-control" />
+                    <input type="password" name="Wachtwoord" id="wachtwoord" class="form-control" />
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Log in</button>
