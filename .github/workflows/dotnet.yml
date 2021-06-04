@@ -67,19 +67,7 @@ jobs:
         password: poi987POI
         port: 21
 
-    - name: Run Commands via SSH To Start/Stop
-      uses: Flaavius/ssh-commands@1.0
-      with:
-        command: dotnet "C:\inetpub\ftproot\Integration_Project\RabbitMQ Receiver.dll"
-        host: 10.3.17.65
-        username: administrator
-        password: ${{secrets.VM_PASSWORD }}
-        tryKeyboard: true
-
-
-
-
-
+   
     
     
         
