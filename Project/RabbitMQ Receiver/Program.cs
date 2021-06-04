@@ -73,6 +73,7 @@ namespace RabbitMQ_Receiver
                                         Source_EntityId = ev.Id.ToString(),
                                         Uuid = receivedEvent.Uuid
                                     });
+                                    Console.WriteLine($"\nEvent successfully added to database");
                                 }
                                 else
                                     Console.WriteLine($"\nFailed to add event to database");

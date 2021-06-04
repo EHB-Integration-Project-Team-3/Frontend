@@ -1017,3 +1017,4 @@ D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Rab
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Event.xsd
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Heartbeat.xsd
 D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\InternalUser.xsd
+D:\GitHub\Frontend\Project\Integration Project.Tests\bin\Debug\netcoreapp3.1\Integration Project.StaticWebAssets.xml

@@ -1321,3 +1321,4 @@ D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\RabbitMQ\
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Event.xsd
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\Heartbeat.xsd
 D:\GitHub\Frontend\Project\Integration Project\bin\Debug\netcoreapp3.1\RabbitMQ\XSD\InternalUser.xsd
+D:\GitHub\Frontend\Project\Integration Project\obj\Debug\netcoreapp3.1\Integration Project.csprojAssemblyReference.cache
