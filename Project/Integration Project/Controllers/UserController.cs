@@ -30,12 +30,9 @@ namespace Integration_Project.Controllers {
         //[UserPermission]
         public IActionResult Detail() {
             var user = HttpHelper.CheckLoggedUser();
-            if (user != null)
-            {
+            if (user != null) {
                 return View("details", user);
-            }
-            else
-            {
+            } else {
                 return Redirect("/");
             }
         }
@@ -49,7 +46,13 @@ namespace Integration_Project.Controllers {
                 HttpContext.Session.Set("Error", ModelHelper<InternalUser>.ObjectToByteArray("Gelieve jouw credentials na te kijken."));
                 return Redirect("/Identity/Account/Login");
             };
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        public IActionResult Logout() {
+            HttpContext.Session.Remove("User");
+            return RedirectToAction("Index", "Home");
         }
 
         //[UserPermission]
